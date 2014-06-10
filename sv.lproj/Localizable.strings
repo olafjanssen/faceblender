@@ -1,0 +1,120 @@
+﻿"NoKey" = "Nej";
+"YesKey" = "Ja";
+"CancelKey" = "Avbryt";
+"WarningKey" = "VARNING!!";
+
+ "BlendsKey" = "Blanda";
+ "EmptyLibraryKey" = "Ansiktsbiblioteket är tomt.";
+ "EmptyLibraryMessKey" = "Vill du öppna en demo där över 100 ansikten finns att leka med?"; 
+ "NewBlendKey" = "Ny blandning baserad på:";
+ "NewBlendAllFacesKey" = "Alla Ansikten";
+ "NewBlendManualSelectionKey" = "Manuellt Val";
+ "NewBlendTraitCriteriaKey" = "Egenskapskriterium";
+
+ "GalleryKey" = "Galleri";
+ "ExportLibraryKey" = "Lägg till i Bibliotek";
+ "ExportSavedPhotosKey" = "Lägg till Sparade bilder";
+ "RenameKey" = "Byt Namn";
+ "NewFaceKey" = "Nytt Ansikte";
+ "NoneKey" = "Inga";
+ "TraitsKey" = "Egenskaper";
+ "SavingFaceKey" = "Spara Nytt Ansikte";
+
+ "LibraryKey" = "Bibliotek";
+ "SelectTraitsKey" = "Välj Egenskaper";
+"NewTraitKey" = "Ny Egenskap";
+ "AddFaceFromKey" = "Lägg till ansikte från:";
+"AddressBookKey" = "Kontakter";
+ "PhotoLibraryKey" = "Bildbibliotek";
+ "CameraKey" = "Kamera";
+ "LibraryEmptyKey" = "Biblioteket är tomt.";
+ "PickPointsKey" = "Välj Punkter";
+"NoPhotoKey" = "Inga Foton ";
+"ContactNoPhotoKey" = "Kontakten har inte ett foto.";
+
+
+ "AboutKey" = "Om";
+ "AboutTextKey" = "Blanda ansikten av dina vänner, familj eller djur till en perfekt och vardaglig vacker bild.\n\n          (c) Awoken Well";
+ "AboutDisclaimKey" = "Alla bildexempel, utom porträttbilder, kommer från stock.xchng (wwww.sxc.hu) och är inte copyright förutom de restriktioner som finns tillgängliga på hemsidan.";
+
+ "SettingsKey" = "Inställningar";
+ "SettingsBlenderKey" = "Mixer";
+ "SettingsDataKey" = "Information";
+ "SettingsGeneralKey" = "Allmänt";
+ "SettingsOtherKey" = "Diverse";
+ "DeleteLibraryKey" = "Ta bort bibliotek?";
+ "DeleteBlendsKey" = "Ta bort alla blandningar?";
+ "DeleteKey" = "Radera";
+ "ResolutionKey" = "Lösning";
+ "LoResKey" = "Låg";
+ "HiResKey" = "Hög";
+ "ShowSampleLibraryKey" = "Visa Demo Bibliotek";
+ "LoadingDatabaseKey" = "Laddar Demo Bibliotek";
+ "ClearLibraryKey" = "Töm Bibliotek";
+ "ClearBlendsKey" = "Ta Bort Alla Blandningar";
+ "ShowTipsKey" = "Ge ett Tips";
+ "CropZoomKey" = "Klipp/Zooma In";
+
+ "Tip1Key" = "Tips: Förbättra kvaliten på dina blandningar genom att öka upplösningen Hög i dina inställningar.";
+ "Tip2Key" = "Tip: Blandningen går snabbare om du förminskar upplösningen till Låg i dina inställningar.";
+ "Tip3Key" = "Tip: Du kan importera en blandning tillbaka till ansiktsbiblioteket för att göra ännu fler intressanta blandningar.";
+ "Tip4Key" = "Tip: Du kan emaila din blandning genom att först exportera den till ditt fotobibliotek";
+ "Tip5Key" = "Tip: Du kan ladda upp din blandning till sociala nätverk online genom att först exportera den till ditt fotobibliotek";
+ "Tip6Key" = "Tip: Du kan zooma in på din blandning genom att använda 'pinch gesture' i ditt blandningsgalleri.";
+ "Tip7Key" = "Tip: Dessa tips kan sättas på eller stängas av i dina inställningar.";
+ "Tip8Key" = "Exampel: För att blanda kvinnor som inte ler, skriv in följande i dina egenskaper: [Kvinna OCH INTE öppen Mun].";
+ "Tip9Key" = "Exampel: För att bara blanda brunetter, skriv in följande i dina egenskaper: [Kvinna OCH brun].";
+ "Tip10Key" = "Exampel: För att blanda dina vänner med katter, skriv in följande i dina egenskaper: [Vänner ELLER Husdjur].";
+ "Tip11Key" = "Exampel: För att blanda alla som inte bär glasögon, skriv in följande i dina egenskaper: [INTE Glasögon].";
+ "Tip12Key" = "Tips: Du kan blanda ansikten i egenskapsbiblioteket, men dessa ändringar blir förlorade när du stänger av Faceblender.";
+ "TipDefKey" = "Tips: Vi försöker hela tiden förbättra Faceblender, så kontakta oss med dina problem och förslag";
+
+ "BlendingXFacesKey" = "Blandar Alla Ansikten (%d faces)";
+ "AllFacesKey" = "Alla Ansikten";
+ "FaceXSelectionKey" = "Val av Ansikte (%d)";
+ "BlendingXSelectionKey" = "Blandar Val (%d ansikten)";
+ "BlendingXTraitKey" = "Blandar med Kriterium (%d ansikten)";
+ "SelectTraitKey" = "Välj Egenskaper";
+ "NoFacesFoundKey" = "Inga ansikten med egenskaper funna.";
+ "ANDKey" = "OCH";
+ "ORKey" = "ELLER";
+ "NOTKey" = "INTE";
+ "XFacesChosenKey" = "%d Ansikten Valda";
+
+ // traits
+ "Gender" = "Kön";
+ "Male" = "Man";
+ "Female" = "Kvinna";
+
+ "Relation" = "Förhållande";
+ "Me" = "Jag";
+ "Friend" = "Vän";
+ "Family" = "Familj";
+ "Colleague" = "Kollega";
+ "Pet" = "Husdjur";
+
+ "Skin" = "Hudtyp";
+ "Light" = "Ljus";
+ "Olive" = "Oliv";
+ "Dark" = "Mörk";
+
+ "Hair" = "Hår";
+ "Black" = "Svart";
+ "Blond" = "Blond";
+ "Brown" = "Brun";
+ "Grey" = "Grå";
+ "Red" = "Röd";
+ "Bald" = "Skallig";
+
+ "Age" = "Ålder";
+ "Baby" = "Baby";
+ "Child" = "Barn";
+ "Adult" = "Vuxen";
+ "Elderly" = "Äldre";
+
+ "Photo Specific" = "Specifikt för Foto";
+
+ "Various" = "Diverse";
+ "Eyes Closed" = "Slutna ögon";
+ "Mouth Open" = "Öppen mun";
+ "Glasses" = "Glasögon";

@@ -1,0 +1,129 @@
+﻿
+/*
+   Localizable.strings
+   FaceBlender
+
+   Created by Olaf Janssen on 4/14/09.
+   Copyright 2009 Delft University of Technology. All rights reserved.
+ */
+
+"NoKey" = "Non";
+"YesKey" = "Oui";
+"CancelKey" = "Annulez";
+"WarningKey" = "ATTENTION!!";
+
+"BlendsKey" = "Mélanges";
+"EmptyLibraryKey" = "Aucun Album de Visages!";
+"EmptyLibraryMessKey" = "Voulez-vous ajouter un album contenant plus de 100 visages inconnus pour vous amuser?";
+"NewBlendKey" = "Nouveau Mélange à Partir de:";
+"NewBlendAllFacesKey" = "Tous les Visages";
+"NewBlendManualSelectionKey" = "Sélection Manuelle";
+"NewBlendTraitCriteriaKey" = "De Caractéristiques";
+
+"GalleryKey" = "Gallerie";
+"ExportLibraryKey" = "Ajouter aux Albums";
+"ExportSavedPhotosKey" = "Exporter vers Photos Enregistrées";
+"RenameKey" = "Renommer";
+"NewFaceKey" = "Nouveau Visage";
+"NoneKey" = "Aucun";
+"TraitsKey" = "Caractéristiques";
+"SavingFaceKey" = "Enregistrer Nouveau Visage";
+
+"LibraryKey" = "Albums";
+"SelectTraitsKey" = "Sélectionner";
+"NewTraitKey" = "Nouveau Caractéristique";
+"AddFaceFromKey" = "Ajouter un Visage Depuis:";
+"AddressBookKey" = "Contacts";
+"PhotoLibraryKey" = "Photothèque";
+"CameraKey" = "Camera";
+"LibraryEmptyKey" = "Album Vide";
+"PickPointsKey" = "Définir";
+"NoPhotoKey" = "Sans Photo ";
+"ContactNoPhotoKey" = "Le contact n'a pas une photo.";
+
+"AboutKey" = "A propos";
+"AboutTextKey" = "Mélange les visages de tes amis, des membres de ta famille ou de tes animaux en un visage parfait qui les moyenne toutes.\n\n           (c) Awoken Well";
+"AboutDisclaimKey" = "Toutes les photos données à titre d'exemples, à part celles de peintures, sont tirées de stock.xchng (wwww.sxc.hu)  et tous les droits sont libres avec les restrictions écrites dans le site web.";
+
+"SettingsKey" = "Réglages";
+"SettingsBlenderKey" = "Mélanger";
+"SettingsDataKey" = "Données";
+"SettingsGeneralKey" = "Général";
+"SettingsOtherKey" = "Autres";
+"DeleteLibraryKey" = "Effacer tous les albums?";
+"DeleteBlendsKey" = "Effacer tous les créations?";
+"DeleteKey" = "Supprimer";
+"ResolutionKey" = "Résolution";
+"LoResKey" = "Basse";
+"HiResKey" = "Haute";
+"ShowSampleLibraryKey" = "Exemple d'albums";
+"LoadingDatabaseKey" = "Charge les visages";
+"ClearLibraryKey" = "Nettoyer l'album";
+"ClearBlendsKey" = "Nettoyer toutes les créations";
+"ShowTipsKey" = "Montrer les Astuces";
+"CropZoomKey" = "Découper/Agrandir";
+
+
+"Tip1Key" = "Astuce: Améliore la qualité de tes créations en augmentant la resolution par Haute dans le menu préférences.";
+"Tip2Key" = "Astuce: Le mélange sera plus rapide si tu diminues la résolution de moitié (Basse) dans le menu préférences.";
+"Tip3Key" = "Astuce: Tu peux importer une création dans ton album de visages pour obtenir des résultats encore plus interessants.";
+"Tip4Key" = "Astuce: Tu peux envoyer ta création par email en l'exportant en premier vers ton album photos.";
+"Tip5Key" = "Astuce: Tu peux envoyer ta création vers des sites sociaux en l'exportant en premier vers ton album photos.";
+"Tip6Key" = "Astuce: Tu peux agrandir ta création en utilisant le geste de pincement dans la gallery des créations.";
+"Tip7Key" = "Astuce: Ces astuces peuvent être désactiver ou activer dans le menu préférences.";
+"Tip8Key" = "Exemple: Pour mélanger les visages de femmes qui ne sourient pas, choisis dans le sélecteur de Caractéristiques: [Femme ET PAS Bouche Ouverte].";
+"Tip9Key" = "Exemple: Pour mélanger les visages de femmes aux cheveux bruns, choisis dans le sélecteur de Caractéristiques: [Femme ET Brun].";
+"Tip10Key" = "Exemple: Pour mélanger les visages de tes amis avec ceux de chats, choisis dans le sélecteur de Caractéristiques: [Ami OU Animal].";
+"Tip11Key" = "Exemple: Pour mélanger tous les visages qui ne portent pas de lunettes, choisis dans le sélecteur de Caractéristiques: [PAS Lunettes].";
+"Tip12Key" = "Astuce: Tu peux changer les visages de l'album d'exemples, mais ces changements seront perdus en quittant FaceBlender.";
+"TipDefKey" = "Astuce: Nous sommes toujours prêt à améliorer FaceBlender, n'hésitez pas à nous contacter ou nous soumettre vos suggestions.";
+
+"BlendingXFacesKey" = "Mélanger les %d visages";
+"AllFacesKey" = "Tous les Visages";
+"FaceXSelectionKey" = "Sélection (%d)";
+"BlendingXSelectionKey" = "Mélanger la Sélection (%d visages)";
+"BlendingXTraitKey" = "Mélanger en tenant compte des Caractéristiques (%d visages)";
+"SelectTraitKey" = "Sélectionner";
+"NoFacesFoundKey" = "Pas de Visages avec ces Caractéristiques.";
+"ANDKey" = "ET";
+"ORKey" = "OU";
+"NOTKey" = "PAS";
+"XFacesChosenKey" = "%d Visages Choisis";
+
+// traits
+"Gender" = "Genre";
+"Male" = "Homme";
+"Female" = "Femme";
+
+"Relation" = "Relation";
+"Me" = "Moi";
+"Friend" = "Ami";
+"Family" = "Famille";
+"Colleague" = "Collègue";
+"Pet" = "Animal";
+
+"Skin" = "Peau";
+"Light" = "Claire";
+"Olive" = "Halée";
+"Dark" = "Foncée";
+
+"Hair" = "Cheveux";
+"Black" = "Noir";
+"Blond" = "Blond";
+"Brown" = "Brun";
+"Grey" = "Gris";
+"Red" = "Roux";
+"Bald" = "Chauve";
+
+"Age" = "Age";
+"Baby" = "Bébé";
+"Child" = "Enfant";
+"Adult" = "Adulte";
+"Elderly" = "Agé";
+
+"Photo Specific" = "Uniquement Pour Photo";
+
+"Various" = "Divers";
+"Eyes Closed" = "Yeux Fermés";
+"Mouth Open" = "Bouche Ouverte";
+"Glasses" = "Lunettes";

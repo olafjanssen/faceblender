@@ -1,0 +1,130 @@
+﻿/* 
+   Localizable.strings
+   FaceBlender
+
+   Created by Olaf Janssen on 4/14/09.
+   Copyright 2009 Delft University of Technology. All rights reserved.
+ */
+
+"NoKey" = "No";
+"YesKey" = "Yes";
+"CancelKey" = "Cancel";
+"WarningKey" = "WARNING!!";
+"OkKey" = "Okay";
+
+
+"BlendsKey" = "Blends";
+"EmptyLibraryKey" = "Face library is empty!";
+"EmptyLibraryMessKey" = "Would you like to load the sample face library, containing over 100 faces to play with?";
+"NewBlendKey" = "New Blend Based On:";
+"NewBlendAllFacesKey" = "All Faces";
+"NewBlendManualSelectionKey" = "Manual Selection";
+"NewBlendTraitCriteriaKey" = "Trait Criteria";
+
+"GalleryKey" = "Gallery";
+"ExportLibraryKey" = "Put into Face Library";
+"ExportSavedPhotosKey" = "Add to Saved Photos";
+"RenameKey" = "Rename";
+"NewFaceKey" = "New Face";
+"NoneKey" = "None";
+"TraitsKey" = "Traits";
+"SavingFaceKey" = "Saving New Face";
+
+"LibraryKey" = "Library";
+"SelectTraitsKey" = "Select Traits";
+"NewTraitKey" = "New Trait";
+"AddFaceFromKey" = "Add Face From:";
+"AddressBookKey" = "Contacts List";
+"PhotoLibraryKey" = "Photo Library";
+"CameraKey" = "Camera";
+"LibraryEmptyKey" = "Library is Empty";
+"PickPointsKey" = "Pick Points";
+"NoPhotoKey" = "No Photo";
+"ContactNoPhotoKey" = "Contact does not have a photo.";
+
+
+"AboutKey" = "About";
+"AboutTextKey" = "Blend the faces of your friends, relatives or pets into a perfect and averagely beautiful image.\n\n           (c) Awoken Well";
+"AboutDisclaimKey" = "All sample photos, except for those of paintings, originate from stock.xchng (wwww.sxc.hu) and are copyright free with the restrictions given on the website.";
+
+"SettingsKey" = "Settings";
+"SettingsBlenderKey" = "Blender";
+"SettingsDataKey" = "Data";
+"SettingsGeneralKey" = "General";
+"SettingsOtherKey" = "Other";
+"DeleteLibraryKey" = "Delete all library items?";
+"DeleteBlendsKey" = "Delete all created blends?";
+"DeleteKey" = "Delete";
+"ResolutionKey" = "Resolution";
+"LoResKey" = "Low";
+"HiResKey" = "High";
+"ShowSampleLibraryKey" = "Show Sample Library";
+"LoadingDatabaseKey" = "Loading Sample Database";
+"ClearLibraryKey" = "Clear Library";
+"ClearBlendsKey" = "Clear All Blends";
+"ShowTipsKey" = "Show Tips";
+"CropZoomKey" = "Crop/Zoom Imports";
+
+"Tip1Key" = "Tip: Improve the quality of your blends by increasing the resolution to High in the settings tab.";
+"Tip2Key" = "Tip: Blending will be a lot faster if you decrease the resolution to Low in the settings tab.";
+"Tip3Key" = "Tip: You can import a blend back into the face library to make even more interesting blends.";
+"Tip4Key" = "Tip: You can email your blend by first exporting it to your photo library.";
+"Tip5Key" = "Tip: You can upload your blend to social network sites by first exporting it to your photo library.";
+"Tip6Key" = "Tip: You can zoom in on your blends by using the pinch gesture in the blends gallery view.";
+"Tip7Key" = "Tip: These tips can be turned on and off in the settings tab.";
+"Tip8Key" = "Example: To blend women that do not smile, enter in the trait selector: [Female AND NOT Mouth open].";
+"Tip9Key" = "Example: To blend only brunette women, enter the following in the trait selector: [Female AND Brown].";
+"Tip10Key" = "Example: To blend your friends with cats, enter the following in the trait selector: [Friend OR Pets].";
+"Tip11Key" = "Example: To blend all people that do not wear glasses, enter in the trait selector: [NOT Glasses].";
+"Tip12Key" = "Tip: You can change the faces in the sample library, but these changes are lost when you quit Faceblender.";
+"TipDefKey" = "Tip: We are always looking to imrpove Faceblender, so contact us with your problems and suggestions.";
+
+"BlendingXFacesKey" = "Blending All (%d faces)";
+"AllFacesKey" = "All Faces";
+"FaceXSelectionKey" = "Face Selection (%d)";
+"BlendingXSelectionKey" = "Blending Selection (%d faces)";
+"BlendingXTraitKey" = "Blending with Trait Critera (%d faces)";
+"SelectTraitKey" = "Select Trait";
+"NoFacesFoundKey" = "No faces with Traits found.";
+"ANDKey" = "AND";
+"ORKey" = "OR";
+"NOTKey" = "NOT";
+"XFacesChosenKey" = "%d Faces Chosen";
+
+// traits
+"Gender" = "Gender";
+"Male" = "Male";
+"Female" = "Female";
+
+"Relation" = "Relation";
+"Friend" = "Friend";
+"Family" = "Family";
+"Colleague" = "Colleague";
+"Pet" = "Pet";
+
+"Skin" = "Skin";
+"Light" = "Light";
+"Olive" = "Olive";
+"Dark" = "Dark";
+
+"Hair" = "Hair";
+"Black" = "Black";
+"Blond" = "Blond";
+"Brown" = "Brown";
+"Grey" = "Grey";
+"Red" = "Red";
+"Bald" = "Bald";
+
+"Age" = "Age";
+"Baby" = "Baby";
+"Child" = "Child";
+"Adult" = "Adult";
+"Elderly" = "Elderly";
+
+"Various" = "Various";
+"Eyes Closed" = "Eyes Closed";
+"Mouth Open" = "Mouth Open";
+"Glasses" = "Glasses";
+
+
+

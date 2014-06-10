@@ -1,0 +1,130 @@
+﻿/* 
+   Localizable.strings
+   FaceBlender
+
+   Created by Olaf Janssen on 4/14/09.
+   Copyright 2009 Delft University of Technology. All rights reserved.
+ */
+
+"NoKey" = "Nee";
+"YesKey" = "Ja";
+"CancelKey" = "Annuleer";
+"WarningKey" = "WAARSCHUWING!!";
+"OkKey" = "Ok";
+
+
+"BlendsKey" = "Blends";
+"EmptyLibraryKey" = "Gezichtenbibliotheek is leeg!";
+"EmptyLibraryMessKey" = "Wil je de demonstratiebibliotheek laden die meer dan 100 gezichten bevat om mee te spelen?";
+"NewBlendKey" = "Nieuwe Blend op basis van:";
+"NewBlendAllFacesKey" = "Alle Gezichten";
+"NewBlendManualSelectionKey" = "Handmatige Selectie";
+"NewBlendTraitCriteriaKey" = "Kenmerk Kiezer";
+
+"GalleryKey" = "Album";
+"ExportLibraryKey" = "Zet in de Bibliotheek";
+"ExportSavedPhotosKey" = "Naar Bewaarde Foto's";
+"RenameKey" = "Hernoem";
+"NewFaceKey" = "Nieuw Gezicht";
+"NoneKey" = "Leeg";
+"TraitsKey" = "Kenmerken";
+"SavingFaceKey" = "Bewaar Nieuw Gezicht";
+
+"LibraryKey" = "Bibliotheek";
+"SelectTraitsKey" = "Kies Kenmerken";
+"NewTraitKey" = "Nieuw Kenmerk";
+"AddFaceFromKey" = "Voeg foto toe van:";
+"AddressBookKey" = "Contactenlijst";
+"PhotoLibraryKey" = "Foto Bibliotheek";
+"CameraKey" = "Fotocamera";
+"LibraryEmptyKey" = "Bibliotheek is Leeg";
+"PickPointsKey" = "Zet Punten";
+"NoPhotoKey" = "Geen Pasfoto";
+"ContactNoPhotoKey" = "Het contact heeft geen pasfoto.";
+
+
+"AboutKey" = "Over";
+"AboutTextKey" = "Blend de gezichten van je vrienden, familie of huisdieren in een perfect maar gemiddeld mooi plaatje.\n\n           (c) Awoken Well";
+"AboutDisclaimKey" = "Alle demonstratiefotos, behalve die van schilderijen, zijn afkomstig van stock.xchng (www.sxc.hu) en zijn copyrightvrij met de restrictries die op de website worden gegeven.";
+
+"SettingsKey" = "Instellingen";
+"SettingsBlenderKey" = "Blender";
+"SettingsDataKey" = "Gegevens";
+"SettingsGeneralKey" = "Algemeen";
+"SettingsOtherKey" = "Anders";
+"DeleteLibraryKey" = "Verwijder de gehele Bibliotheek?";
+"DeleteBlendsKey" = "Verwijder alle gemaakte Blends?";
+"DeleteKey" = "Verwijder";
+"ResolutionKey" = "Resolutie";
+"LoResKey" = "Laag";
+"HiResKey" = "Hoog";
+"ShowSampleLibraryKey" = "Toon Demobieb";
+"LoadingDatabaseKey" = "Laad Demonstratiebibliotheek";
+"ClearLibraryKey" = "Verwijder Bibliotheek";
+"ClearBlendsKey" = "Verwijder Alle Blends";
+"ShowTipsKey" = "Toon Tips";
+"CropZoomKey" = "Crop/Zoom Import";
+
+"Tip1Key" = "Tip: Verbeter de kwaliteit van je blends door de resolutie te verhogen naar Hoog in de instellingen tab.";
+"Tip2Key" = "Tip: Blenden gaat een stuk sneller wanneer je de resolutie verlaagd naar Laag in de instellingen tab.";
+"Tip3Key" = "Tip: Je kan een gemaakte blend weer importeren in je bibliotheek om nog meer interessante blends te maken.";
+"Tip4Key" = "Tip: Je kan je blend e-mailen door het eerst naar je Fotobibliotheek te exporteren.";
+"Tip5Key" = "Tip: Je kan je blend naar Social Network Sites uploaden door het eerst naar je Fotobibliotheek te exporteren";
+"Tip6Key" = "Tip: Je kan inzoomen op je blend door twee vingers van elkaar af te bewegen in het album.";
+"Tip7Key" = "Tip: Deze tips kunnen worden uitgezet in de instellingen tab.";
+"Tip8Key" = "Voorbeeld: Om niet-lachende vrouwen te blenden, kies als kenmerken: [Vrouw EN NIET Mond open].";
+"Tip9Key" = "Voorbeeld: Om alleen brunnetes te blenden, kies als kenmerken: [Vrouw EN Bruin].";
+"Tip10Key" = "Voorbeeld: Om je vrienden te blenden met katten, kies als kenmerken: [Vriend OF Huisdier].";
+"Tip11Key" = "Voorbeeld: Om iedereen die geen bril draagt de blenden, kies als kenmerk: [NIET Bril].";
+"Tip12Key" = "Tip: Je kan de gezichten van de demonstratiebibliotheek wijzigen, maar deze wijzigingen raken verloren als je FaceBlender stopt.";
+"TipDefKey" = "Tip: We willen FaceBlender altijd verbeteren, dus aarzel niet om ons met je problemen en suggesties te contacteren.";
+
+"BlendingXFacesKey" = "Blend Alles (%d gezichten)";
+"AllFacesKey" = "Alle Gezichten";
+"FaceXSelectionKey" = "Selectie (%d)";
+"BlendingXSelectionKey" = "Blend Selectie (%d gezichten)";
+"BlendingXTraitKey" = "Blend met Kenmerken (%d gezichten)";
+"SelectTraitKey" = "Kies Kenmerk";
+"NoFacesFoundKey" = "Geen gezichten gevonden met die kenmerken.";
+"ANDKey" = "EN";
+"ORKey" = "OF";
+"NOTKey" = "NIET";
+"XFacesChosenKey" = "%d Gezichten Gekozen";
+
+// traits
+"Gender" = "Geslacht";
+"Male" = "Man";
+"Female" = "Vrouw";
+
+"Relation" = "Relatie";
+"Me" = "Ik";
+"Friend" = "Vriend";
+"Family" = "Familie";
+"Colleague" = "Collega";
+"Pet" = "Huisdier";
+
+"Skin" = "Huidskleur";
+"Light" = "Blank";
+"Olive" = "Olijf";
+"Dark" = "Donker";
+
+"Hair" = "Haarkleur";
+"Black" = "Zwart";
+"Blond" = "Blond";
+"Brown" = "Bruin";
+"Grey" = "Grijs";
+"Red" = "Rood";
+"Bald" = "Kaal";
+
+"Age" = "Leeftijd";
+"Baby" = "Baby";
+"Child" = "Kind";
+"Adult" = "Volwassen";
+"Elderly" = "Bejaard";
+
+"Photo Specific" = "Specifiek voor Foto";
+"Eyes Closed" = "Ogen Dicht";
+"Mouth Open" = "Mond Open";
+
+"Various" = "Allerlei";
+"Glasses" = "Bril";

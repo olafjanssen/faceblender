@@ -1,0 +1,120 @@
+﻿/* 
+   Localizable.strings
+   FaceBlender
+
+   Created by Olaf Janssen on 4/14/09.
+   Copyright 2009 Delft University of Technology. All rights reserved.
+ */
+
+"NoKey" = "Nein";
+"YesKey" = "Ja";
+"CancelKey" = "Abbrechen";
+"WarningKey" = "WARNUNG!!";
+
+"BlendsKey" = "Mischungen";
+"EmptyLibraryKey" = "Gesicht-Bibliothek ist leer!";
+"EmptyLibraryMessKey" = "Möchten Sie die Demo-Bibliothek mit mehr als 100 Gesichter zu spielen laden?";
+"NewBlendKey" = "Neue Mischung basiert auf:";
+"NewBlendAllFacesKey" = "Alle Gesichter";
+"NewBlendManualSelectionKey" = "Manuelle Auswahl";
+"NewBlendTraitCriteriaKey" = "Gesichtszug Kriterien";
+
+"GalleryKey" = "Galerie";
+"ExportLibraryKey" = "In der Bibliothek";
+"ExportSavedPhotosKey" = "Ins Gesicherte Fotos";
+"RenameKey" = "Umbenennen";
+"NewFaceKey" = "Neues Gesicht";
+"NoneKey" = "Keine";
+"TraitsKey" = "Gesichtszüge";
+"SavingFaceKey" = "Speichern neues Gesicht";
+
+"LibraryKey" = "Bibliothek";
+"SelectTraitsKey" = "Wahl Gesichtszüge";
+"AddFaceFromKey" = "Hinzufügen von";
+"PhotoLibraryKey" = "Fotoarchiv";
+"CameraKey" = "Kamera";
+"LibraryEmptyKey" = "Bibliothek ist leer";
+
+"AboutKey" = "Über";
+"AboutTextKey" = "Blend the faces of your friends, relatives or pets into a perfect and averagely beautiful image.\n\n           (c) Awoken Well";
+"AboutDisclaimKey" = "All sample photos, except for those of paintings, originate from stock.xchng (wwww.sxc.hu) and are copyright free with the restrictions given on the website.";
+
+"SettingsKey" = "Einstellungen";
+"SettingsBlenderKey" = "Mischer";
+"SettingsDataKey" = "Daten";
+"SettingsGeneralKey" = "Algemein";
+"SettingsOtherKey" = "Andere";
+"DeleteLibraryKey" = "Die gesamte Bibliothek Löschen?";
+"DeleteBlendsKey" = "Alle Mischungen Löschen?";
+"DeleteKey" = "Löschen";
+"ResolutionKey" = "Resolution";
+"ShowSampleLibraryKey" = "Demo-Bibliothek";
+"LoadingDatabaseKey" = "Laden Demo-Bibliothek";
+"ClearLibraryKey" = "Löschen Bibliothek";
+"ClearBlendsKey" = "Löschen Mischungen";
+"ShowTipsKey" = "Tipps anzeigen";
+"CropZoomKey" = "Crop/Zoom Import";
+
+"Tip1Key" = "Tip: Improve the quality of your blends by increasing the resolution to 1x or 2x in the settings tab.";
+"Tip2Key" = "Tip: Blending will be a lot faster if you decrease the resolution to 0.5x in the settings tab.";
+"Tip3Key" = "Tip: You can import a blend back into the face library to make even more interesting blends.";
+"Tip4Key" = "Tip: You can email your blend by first exporting it to your photo library.";
+"Tip5Key" = "Tip: You can upload your blend to social network sites by first exporting it to your photo library.";
+"Tip6Key" = "Tip: You can zoom in on your blends by using the pinch gesture in the blends gallery view.";
+"Tip7Key" = "Tip: These tips can be turned on and off in the settings tab.";
+"Tip8Key" = "Example: To blend women that do not smile, enter in the trait selector: [Female AND NOT Mouth open].";
+"Tip9Key" = "Example: To blend only brunette women, enter the following in the trait selector: [Female AND Brown].";
+"Tip10Key" = "Example: To blend your friends with cats, enter the following in the trait selector: [Friend OR Pets].";
+"Tip11Key" = "Example: To blend all people that do not wear glasses, enter in the trait selector: [NOT Glasses].";
+"Tip12Key" = "Tip: You can change the faces in the sample library, but these changes are lost when you quit Faceblender.";
+"TipDefKey" = "Tip: We are always looking to imrpove Faceblender, so contact us with your problems and suggestions.";
+
+"BlendingXFacesKey" = "Mischung von allem (%d Gesichter)";
+"AllFacesKey" = "Alle Gesichter";
+"FaceXSelectionKey" = "Auswahl (%d)";
+"BlendingXSelectionKey" = "Mischung von Auswahl (%d Gesichter)";
+"BlendingXTraitKey" = "Mischung von Gesichtszug Kriterien (%d Gesichter)";
+"SelectTraitKey" = "Wahl Gesichtszug";
+"NoFacesFoundKey" = "Keine Gesichter gefunden mit Gesichtszüge.";
+"ANDKey" = "UND";
+"ORKey" = "ODER";
+"NOTKey" = "NICHT";
+"XFacesChosenKey" = "%d Gesichter gewählt";
+
+// traits
+"Gender" = "Geschlecht";
+"Male" = "Mann";
+"Female" = "Frau";
+
+"Relation" = "Relation";
+"Friend" = "Kamerad";
+"Family" = "Familie";
+"Colleague" = "Kollege";
+"Pet" = "Haustier";
+
+"Skin" = "Haut";
+"Light" = "Licht";
+"Olive" = "Oliv";
+"Dark" = "Dunkel";
+
+"Hair" = "Haare";
+"Black" = "Schwarz";
+"Blond" = "Blond";
+"Brown" = "Brünett";
+"Grey" = "Grau";
+"Red" = "Rot";
+"Bald" = "Kahl";
+
+"Age" = "Alter";
+"Baby" = "Baby";
+"Child" = "Kind";
+"Adult" = "Erwachsene";
+"Elderly" = "Senior";
+
+"Various" = "Divers";
+"Eyes Closed" = "Augen Geschlossen";
+"Mouth Open" = "Mund Offen";
+"Glasses" = "Brille";
+
+
+

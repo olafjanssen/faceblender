@@ -1,0 +1,233 @@
+{\rtf1\ansi\ansicpg1252\cocoartf949\cocoasubrtf460
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww16480\viewh13900\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 FaceBlender to do:\
+\
+0.0.001	Sort faces on name\
+0.0.002	Sort gallery on time\
+0.0.003	Properly delete the files of deleted gallery and face items\
+0.0.004	Smooth and fit better the image in face details\
+0.0.005	Fix the comment length of trait blending\
+0.0.006	Implement cancel button during faceblending\
+0.0.007	Change location of images to document directory.\
+0.0.008	Correct Face jump in gallery image viewer	\
+0.0.009	Order blend options vertically\
+0.0.010	Make left-right button in gallery image viewer functional\
+0.0.011	Add drag left-right for gallery image viewer\
+0.0.012	Add delete bucket in gallery image viewer\
+0.0.013	End points based on partial selection\
+0.0.014	Add icons to gallery/library/settings\
+0.0.015	Make NOT option\
+0.0.016	Substitute icons of left/right eye, chin\
+0.0.017	Add sections for library\
+0.0.018	Use default startup picture of last position\
+0.0.019	Make images resolution independent	\
+0.0.020	Add settings pane containing\
+0.0.021	Put new library item in correct position\
+0.0.022	Setting Pane: Resolution\
+0.0.023	Setting Pane: BlackAura\
+0.0.024	Fix transformation bug -> chin does not get rotated below eyes\
+0.0.025	Let cancel button work in blender	\
+0.0.026	Error when zero faces are selected\
+0.0.027	Put new gallery item in correct position\
+0.0.028	First mix is different from the subsequent mixes\
+0.0.029	Fix Bug Trait Picker in Blender disappears after using manual mix\
+0.0.030	Fix Bug with Gallery Items not properly deleted\
+0.0.031	Return to correct face after picking traits, save traits correctly for new faces\
+0.0.032	Setting Pane: Clear Gallery\
+0.0.033	Add Face details page after adding a face\
+0.0.034	Put add picture options in action sheet instead of alert\
+0.0.035	Better filename for new items and automatic uniqueid\
+0.0.036	After library delete there are problems\
+0.0.037	Update face details layout\
+0.0.038	Solve Excessive Memory Usage Mixer\
+0.0.039	Speed up mixing process\
+0.0.040	Overlay incorrect in Gallery\
+0.0.041	Set progress bar to zero in beginning\
+0.0.042	Remove bar visible in dragging left and right\
+0.0.043	Setting Pane: Use Demo Library\
+0.0.044	Setting Pane: Clear Library\
+0.0.045	Cancel button in mixing is removed\
+0.0.046	Speed up library view\
+0.0.047	Add waiting icon before showing library\
+0.0.048	Add section order based on traits\
+0.0.049	Remove index in library edit mode\
+0.0.050	Remove tbumbnail images on delete\
+0.0.051	Remove from Camera option for iPod\
+0.0.052	Allow zooming in gallery view\
+0.0.053	Name label in details view does not update\
+0.0.054	Export to saved images does not work\
+0.0.055	Aura smaller\
+0.0.056	Add cancel button during mixing\
+0.0.057	Mixing is now done in a seperate thread\
+0.0.058	Change position icons\
+0.0.059	Drag icons from pointed position\
+0.0.060	Add email feature\
+0.0.061	Refine email feature\
+0.0.062	Setting Pane: About\
+0.0.063	Change selection of settings pane\
+0.0.064	Change position icons\
+0.0.065	Change settings icon to cogwheel\
+0.0.066	Better delete messages  in settings panel\
+0.0.067	Do canceled imagepicker better\
+0.0.068	Make manual selection faster\
+0.0.069	Update Default.png\
+0.0.070	Make statusbar black in gallery\
+0.0.071	Better traits blender options\
+0.0.072	Autosize mixed image\
+0.0.073	Updated selection color showing up\
+0.0.074	Added No Faces Alert view\
+0.0.075	Resolved settings crash\
+0.0.076	Remove galleryitem thumbnails\
+0.0.077	Added closeup view in pickpoints\
+0.0.078	Pickpoints view now correct aspect ratio\
+0.0.079	Gallery is renamed to Blends\
+0.0.080	Manual selection is now done in a mosaic scrollView\
+0.0.081	New Icons for eyes and mouth instead of chin\
+0.0.082	Deleting within Gallery tableview is possible\
+0.0.083	Improved Gallery entree (fade in/autohide navbar)\
+0.0.084	Library works again with new icons\
+0.0.085	Removed warning if no faces will be blend\
+0.0.086 	Implemented renaming feature\
+0.0.087	New implementation of the trait logic view\
+0.0.088	Fixed zoom in for newly imported pictures\
+0.0.089	Fixed opening numerically named library entries\
+0.0.090	Add disclosure indication for library items\
+0.0.091	Added number indication for amount of faces in part of the library\
+0.0.092	Added Select Traits title and changed checkmark of trait selection view\
+0.0.093	Bugfix of crash related to deleting the only face in a library folder or section\
+0.0.094	Name is correctly remembered in editing faces\
+0.0.095	Version is visible on about page\
+0.0.096	Included automatic contrast stretching to improve blend contrasts\
+0.0.097	Improved automatic pre-blend resizer\
+0.0.098	Added clear buttons to textfields\
+0.0.099	Fixed traits logic bug with not operator\
+0.0.100	Fixed alignment issue coming from differently sized library photos\
+0.0.101	Conservative stretching is applied when needed\
+0.0.102	Show navbar when zoomed back to 1 and hide it while zooming\
+0.0.103	Add number of pics used in trait logic window\
+0.0.104	Add cancel button to selection view\
+0.0.105	Gallery sweeping can cause oversweep if image is not loaded yet\
+0.0.106	Fix long wait in trait logic\
+0.0.107	Add checkmark in trait logic\
+0.0.108	Removed aura option in settings\
+0.0.109	Increased thumbnail size in library\
+0.0.110	Inserted first time loader for demo library\
+0.0.111	Improved gallery sweep experience by reusing cached images\
+0.0.112	Linked correct face library in .app package\
+0.0.113	Removed first time loader, instead included thumbnails in package\
+0.0.114	Set default resolution at 0.5x\
+0.0.115	Update traits list\
+0.0.116	Added 2 sample blends\
+0.0.117	Galleryitems can also be loaded from the .app package\
+0.0.118	Stay in gallery item viewer when you delete gallery item.\
+0.0.119	List now scrolls all the way after gallery item view has been loaded\
+0.0.120	Removed crop and resize of imported images\
+0.0.121	Saving of traits is done in database immediately after pressing save in that view\
+0.0.122	About view can be changed dynamically\
+0.0.123	New application icons\
+0.0.124	Gallery and Library are now loaded in separate threads\
+0.0.125	Startup speed is improved\
+0.0.126	Rename possible in gallery edit mode\
+0.0.127	Import into library feature\
+0.0.128	Added landmark points to gallery database\
+0.0.129	Fixed crash for faces with empty name\
+0.0.130	Improved contrast stretching for source images\
+0.0.131	Better loading stability of databases from settings menu\
+0.0.132	AND and OR button now appear after first trait selection\
+0.0.133	Updated disclaimer text on About view\
+0.0.134	First Release version sent to Apple store\
+0.0.135	Removed all memory leaks\
+0.0.136	Removed display race condition during blending\
+0.0.137	Faster timer if add library item cancelled\
+0.0.138	Moved code for making icons in the mainthread (crash otherwise)\
+0.0.139	Preload the imagePicker object preventing core library memory leak\
+0.0.140	Fixed bug of blending all faces with only 2 or 3 faces, not returning to gallery\
+0.0.141	Only show used traits in pre-library and trait selection\
+0.0.142	Show message in prelibrary if it is empty\
+0.0.143	Show message in traits selection if it is empty\
+0.0.144	Made additions to traits list\
+0.0.145	Make trait selection standard OR\
+0.0.146	Removed all compiler warnings\
+0.0.147	Removed crash from retained face in addFaceController\
+0.0.148	Ask to add sample library if trying to blend empty library\
+0.0.149	Changed name of demo library to sample library\
+0.0.150	Added tips during blends, and option to toggle on or off in settings\
+0.0.151	Added option to use zoom/crop imports in settings\
+0.0.152	Speed up trait tables	\
+0.0.153	Several code fixes after using a Static Code Analyzer\
+0.0.154	Added remove animation in galleryview\
+0.0.155	Left/Right button grey out when they cannot be used\
+0.0.156	Several memory fixes\
+0.0.157	Fixed tipTimer bad access exception\
+0.0.158	Clears name text on rename when face is new\
+0.0.159	Darker loading screens and added text indicator\
+0.0.160	Removed several memory issues\
+0.0.161	Status bar turns black while showing the loading screen\
+0.0.162	Added grey hair to traits and removed custom traits\
+0.0.163	Automatically turn on zoom/crop for iPhone\
+0.0.164	Made manual selection tool less sensitive for selection\
+0.0.165	Several memory fixes\
+1.0.000 	First Release\
+1.0.001	Bugfix: Automatically turn on zoom/crop for iPhone\
+1.0.002	Add bald to traits\
+1.0.003	Width of Blends tableview cells stays constant\
+1.0.004	Added English and Dutch localization\
+1.0.005	Retain small preview and name when picking traits\
+1.0.006	Cancel buttons in actionsheets better clickable\
+1.0.007	Added French, German and Swedish localization\
+1.0.008	Photos can now be added from the contact list\
+1.0.009	New custom traits can be added by the user\
+1.0.010	Small bug fixes (done button localized etc.)\
+1.0.011	Index letters shown in Manual Selection list\
+1.0.012	Bugfix of crash when removing last face in a list\
+1.0.013	Bugfix of crash when using tab bar while in pointpicker\
+1.0.014	Eyes and mouth icon rotate to appear in the right way\
+1.0.015	Demo library is not stored in the Documents folder anymore\
+1.0.016	Documents folder is cleaned of Demo library items\
+1.0.017	Corrupt images not longer corrupt the blending process\
+1.0.018	Added Me to traits\
+1.0.019	Added Photo Specific traits that are not copied when a suggested name is chosen\
+1.0.020	Newly created Trait is automatically selected\
+1.0.021	Save and Cancel button in Rename and New Trait screen\
+1.0.022	Disclosure arrow remains when editing Blends list\
+1.0.023	Improved name suggestion method\
+1.0.024	Resolved issue with adding contact list items without the right data\
+1.0.025	Changed done button into save button in Face Details screen\
+1.0.026	Made possible to cancel a Blend that is being added to the Face Library\
+1.0.027	Removed 2x resolution and altered the list to High and Low resolution\
+1.0.028	Resolved bug where the camera could only be used once\
+1.0.029	Bugfix of trait selection\
+1.0.030	Name suggestions are not automatically saved when the back button is picked\
+1.0.031	Bugfix of hanging when changings tabs during startup\
+1.0.032	Bugfix of blend table position when returning from Gallery (2.2.1 issue)\
+1.0.033	Better selection in manual selection view\
+1.0.034	Changed Back button to Cancel after importing a photo in the pick point view\
+1.0.035	Loading screen when cancelling adding a photo\
+1.0.036	Bugfix of deleting library items\
+1.0.037	Release icons when adding pictures (solves memory issue of Apple picker tools\
+1.1.000	Second major release\
+1.1.001	Handling Arrays out of Range and String related exceptions that should not occur but unexpectedly do\
+1.1.002	Removed image loading memory leak-like behavior\
+1.1.003	Facebook connectivity added\
+1.1.004	Photos can be uploaded to your Facebook photo gallery including a feed post.\
+1.1.005	Demo library is now downloaded from our server to decrease app footprint.\
+1.1.006	When library is deleted, the demo library is turned off automatically.\
+1.1.007	Removed disclosure icon when editing gallery\
+1.1.008	Photos can be added from your Facebook friends list\
+\
+BUGFIXES:\
+- issues with using the iPhone camera\
+- various crashes and inconsistencies\
+\
+NEW FEATURES:\
+- Add photos from your contacts list\
+- Add new custom traits\
+- Smoother trait selection\
+- Add multiple photos of a single person fast by using suggested names\
+\
+.. and many more small alterations and improvements.\
+}
