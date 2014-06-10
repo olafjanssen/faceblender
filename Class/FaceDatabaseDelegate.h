@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <sqlite3.h>
-#import "Face.h";
+#import "Face.h"
 
 @interface FaceDatabaseDelegate : NSObject {
     NSString *databaseName;

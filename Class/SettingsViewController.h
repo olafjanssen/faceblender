@@ -9,7 +9,6 @@
 #import "FaceBlenderAppDelegate.h"
 #import "AboutViewController.h"
 #import "IconMaker.h"
-#import "FBConnect/FBConnect.h"
 #import "DownloadController.h"
 
 @interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIAlertViewDelegate> {
@@ -29,7 +28,6 @@
     BOOL keyTips;
 	BOOL keyCrop;
     BOOL keyDemo;
-	FBLoginButton *loginButton;
 }
 
 @property ( retain) FaceBlenderAppDelegate *appDelegate;

@@ -13,8 +13,6 @@
 #import "NSDataM64.h"
 #import "GalleryItemRenameViewController.h"
 #import "FaceDetailsViewController.h"
-#import "FBSessionController.h"
-
 
 @interface GalleryItemViewController : UIViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIScrollViewDelegate> {
 	UIImageView *imageView, *imageViewLeft, *imageViewRight;

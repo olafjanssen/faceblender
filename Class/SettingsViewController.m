@@ -50,9 +50,9 @@
 //	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"settings.ser"];
 	settings = [NSMutableArray arrayWithContentsOfFile:filePath];
 	if (settings.count>3){
-	if ([[settings objectAtIndex:0] compare:@"0.5x"] == NSOrderedSame) keyRes = 0;
-	if ([[settings objectAtIndex:0] compare:@"1x"] == NSOrderedSame) keyRes = 1;
-	if ([[settings objectAtIndex:0] compare:@"2x"] == NSOrderedSame) keyRes = 1;	// 2x is no longer supported
+        if ([[settings objectAtIndex:0] compare:@"0.5x"] == NSOrderedSame){ keyRes = 0; }
+        if ([[settings objectAtIndex:0] compare:@"1x"] == NSOrderedSame){ keyRes = 1; }
+	if ([[settings objectAtIndex:0] compare:@"2x"] == NSOrderedSame){ keyRes = 1;}	// 2x is no longer supported
 	
 	keyTips = ([[settings objectAtIndex:1] compare:@"YES"]==NSOrderedSame);
 	keyDemo = ([[settings objectAtIndex:2] compare:@"YES"]==NSOrderedSame);
@@ -64,9 +64,6 @@
 	cropSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(200,8,50,50)];
 	demoSwitch = [[UISwitch alloc] initWithFrame:CGRectMake(200,8,50,50)];
 	
-	loginButton = [[FBLoginButton alloc] init]; 
-//	[loginButton setStyle:FBLoginButtonStyleWide];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -252,37 +249,37 @@
 
 - (void) switchedOption
 {
-	keyRes = resControl.selectedSegmentIndex;
+	keyRes = (int)resControl.selectedSegmentIndex;
 	keyTips = tipsSwitch.on;
 	keyDemo = demoSwitch.on;
 	keyCrop = cropSwitch.on;
 	
 	NSString *newStr0;
 	if (resControl.selectedSegmentIndex == 0)
-		newStr0 = [NSString stringWithString:@"0.5x"];
+		newStr0 = @"0.5x";
 	else if (resControl.selectedSegmentIndex == 1)
-		newStr0 = [NSString stringWithString:@"1x"];
+		newStr0 = @"1x";
 	else if (resControl.selectedSegmentIndex == 2)
-		newStr0 = [NSString stringWithString:@"2x"];
-	else newStr0 = [NSString stringWithString:@"0.5x"];
+		newStr0 = @"2x";
+	else newStr0 = @"0.5x";
 	
 	NSString *newStr1;
 	if (tipsSwitch.on) 
-		newStr1 = [NSString stringWithString:@"YES"];
+		newStr1 = @"YES";
 	else
-		newStr1 = [NSString stringWithString:@"NO"];
+		newStr1 = @"NO";
 
 	NSString *newStr2;
 	if (demoSwitch.on) 
-		newStr2 = [NSString stringWithString:@"YES"];
+		newStr2 = @"YES";
 	else
-		newStr2 = [NSString stringWithString:@"NO"];
+		newStr2 = @"NO";
 
 	NSString *newStr3;
 	if (cropSwitch.on) 
-		newStr3 = [NSString stringWithString:@"YES"];
+		newStr3 = @"YES";
 	else
-		newStr3 = [NSString stringWithString:@"NO"];
+		newStr3 = @"NO";
 	
 	settings = [[NSMutableArray alloc] init];
 	
@@ -301,7 +298,7 @@
 	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellID];
 	if (cell == nil)
 	{
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:kCellID] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellID] autorelease];
 	}
 		
 	switch (indexPath.section) {
@@ -310,7 +307,7 @@
 				case 0:
 					cell.accessoryType = UITableViewCellAccessoryNone;
 					cell.selectionStyle = UITableViewCellSelectionStyleNone;
-					cell.text = NSLocalizedString(@"ResolutionKey",@"");
+					cell.textLabel.text = NSLocalizedString(@"ResolutionKey",@"");
 					resControl = [[UISegmentedControl alloc] initWithItems: [NSArray arrayWithObjects: NSLocalizedString(@"LoResKey",@""), NSLocalizedString(@"HiResKey",@""), nil]];
 					resControl.frame = CGRectMake(132,8,160,30);
 					[cell.contentView addSubview:resControl];
@@ -328,7 +325,7 @@
 				case 0:
 					cell.accessoryType = UITableViewCellAccessoryNone;
 					cell.selectionStyle = UITableViewCellSelectionStyleNone;
-					cell.text = NSLocalizedString(@"ShowSampleLibraryKey",@"");
+					cell.textLabel.text = NSLocalizedString(@"ShowSampleLibraryKey",@"");
 					[cell.contentView addSubview:demoSwitch];
 					
 					[demoSwitch addTarget:self action:@selector(switchedDemoOption) forControlEvents:UIControlEventValueChanged];
@@ -341,12 +338,12 @@
 				case 1:					
 					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 					cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-					cell.text = NSLocalizedString(@"ClearLibraryKey",@"");
+					cell.textLabel.text = NSLocalizedString(@"ClearLibraryKey",@"");
 					break;
 				case 2:
 					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 					cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-					cell.text = NSLocalizedString(@"ClearBlendsKey",@"");
+					cell.textLabel.text = NSLocalizedString(@"ClearBlendsKey",@"");
 					break;
 				default:
 					break;
@@ -355,20 +352,12 @@
 		case 2:
 			switch(indexPath.row){
 				case 0:
-					cell.text = @"Facebook";
-					CGRect brect = loginButton.frame;
-					brect.origin.x = 200;
-					brect.origin.y = 8;
-					
-					[loginButton setFrame:brect];
-					
-					[cell.contentView addSubview:loginButton];
-					
+					cell.textLabel.text = @"Facebook";
 					break;
 				case 1:
 					cell.accessoryType = UITableViewCellAccessoryNone;
 					cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-					cell.text = NSLocalizedString(@"ShowTipsKey",@"");
+					cell.textLabel.text = NSLocalizedString(@"ShowTipsKey",@"");
 					[cell.contentView addSubview:tipsSwitch];
 					
 					[tipsSwitch addTarget:self action:@selector(switchedOption) forControlEvents:UIControlEventValueChanged];
@@ -382,7 +371,7 @@
 					if ([[[UIDevice currentDevice] model] compare: @"iPod touch"] == NSOrderedSame) {
 					cell.accessoryType = UITableViewCellAccessoryNone;
 					cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-						cell.text = NSLocalizedString(@"CropZoomKey",@"");
+						cell.textLabel.text = NSLocalizedString(@"CropZoomKey",@"");
 					[cell.contentView addSubview:cropSwitch];
 					
 					[cropSwitch addTarget:self action:@selector(switchedOption) forControlEvents:UIControlEventValueChanged];
@@ -393,13 +382,13 @@
 					} else {
 						cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 						cell.selectionStyle = UITableViewCellSelectionStyleBlue; 
-						cell.text = NSLocalizedString(@"AboutKey",@"");
+						cell.textLabel.text = NSLocalizedString(@"AboutKey",@"");
 					}
 					break;
 				case 3:
 					cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 					cell.selectionStyle = UITableViewCellSelectionStyleBlue; 
-					cell.text = NSLocalizedString(@"AboutKey",@"");
+					cell.textLabel.text = NSLocalizedString(@"AboutKey",@"");
 					break;
 				default:
 					break;
@@ -417,7 +406,6 @@
 	[tipsSwitch release];
 	[cropSwitch release];
 	[demoSwitch release];
-	[loginButton release];
     [super dealloc];
 }
 

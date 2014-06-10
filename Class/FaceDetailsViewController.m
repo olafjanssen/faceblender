@@ -226,12 +226,15 @@
     tableArray = [[NSMutableArray alloc] init];
     
     for(Trait *trait in appDelegate.faceDatabaseDelegate.traits){
-        if (trait.description)
-		if ([traitsLst rangeOfString:trait.description].location!=NSNotFound)
-            if ([[trait.description substringToIndex:1] compare:@"@"]==NSOrderedSame){
+        if (trait.description) {
+            if ([traitsLst rangeOfString:trait.description].location!=NSNotFound){
+            if ([[trait.description substringToIndex:1] compare:@"@"]==NSOrderedSame) {
 				[tableArray addObject:[trait.description substringFromIndex:1]];	
-			} else
+			} else {
 				[tableArray addObject:NSLocalizedString(trait.description,@"")];
+            }
+            }
+        }
     }
     
     if([tableArray count] == 0) [tableArray addObject:NSLocalizedString(@"NoneKey",@"")];
@@ -399,7 +402,7 @@
 	UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:kCellID];
 	if (cell == nil)
 	{
-		cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:kCellID] autorelease];
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kCellID] autorelease];
 	}
 	
 	if(indexPath.row == 0)
@@ -408,16 +411,10 @@
 		cell.accessoryType = UITableViewCellAccessoryNone;
 	
 	if (tableArray.count>indexPath.row)
-		cell.text = [tableArray objectAtIndex:[indexPath row]];
+		cell.textLabel.text = [tableArray objectAtIndex:[indexPath row]];
 	
 	return cell;
 }
-
-@synthesize imageView, imageViewBorder, textField, pickPointsView, face, pickTraitsView;
-@synthesize appDelegate;
-@synthesize headerView,tableView, tableArray;
-@synthesize textLabel, imageButton, suggestion, isImport, traitsLst,blackView;
-
 
 - (void)dealloc {
 	imageView.image = nil;
@@ -448,7 +445,7 @@
 	[super release];
 }
 
-/*
+
 -(id)alloc {
 	return [super alloc];
 }

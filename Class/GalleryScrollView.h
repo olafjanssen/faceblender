@@ -12,12 +12,12 @@
 @interface GalleryScrollView : UIScrollView <UIScrollViewDelegate> {
 	int xdist;
 	int mode;
-	float zoomScale;
+	CGFloat zoomScale;
 }
 
 @property ( assign) int xdist;
 @property ( assign) int mode;
-@property ( assign) float zoomScale;
+@property ( nonatomic, assign) CGFloat zoomScale;
 
 -(BOOL)touchesShouldBegin:(NSSet *)touches withEvent:(UIEvent *)event inContentView:(UIView *)view;
 - (void)viewDidLoad;

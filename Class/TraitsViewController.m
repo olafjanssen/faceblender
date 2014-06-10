@@ -30,9 +30,9 @@
 		
 		NSString *strc;
 		if (traitsLst.length>0)
-			strc = [[NSString alloc] initWithFormat:@", %@",face.traitsTmp];
+			strc = [[NSString alloc] initWithFormat:@", %@", face.traitsTmp];
 		else
-			strc = [[NSString alloc] initWithFormat:@"%@",face.traitsTmp];
+			strc = [[NSString alloc] initWithFormat:@"%@", face.traitsTmp];
 		
 		NSString *tmp = [NSString stringWithString: traitsLst];
 		[traitsLst release];
@@ -106,7 +106,7 @@
 
     // get the data
     int cnt = 0;
-    NSMutableString *traitStr = [[NSMutableString alloc] initWithCString:""];
+    NSMutableString *traitStr = [[NSMutableString alloc] initWithUTF8String:""];
     for(int tog=0;tog<appDelegate.faceDatabaseDelegate.traits.count;tog++){
         if (toggles[tog]){
             if (cnt>0) [traitStr appendString:@", "];            
@@ -161,7 +161,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Set up the cell
@@ -177,7 +177,7 @@
 
 	// adder cell
 	if (indexPath.section == 6 && appDelegate.faceDatabaseDelegate.traitSections.count>6 && indexPath.row == [[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:6] uniqueId]){
-		[cell setText:NSLocalizedString(@"NewTraitKey",@"")];
+		[cell.textLabel setText:NSLocalizedString(@"NewTraitKey",@"")];
 		[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	} else {
 	
@@ -186,9 +186,9 @@
 		trait = (Trait *)[appDelegate.faceDatabaseDelegate.traits objectAtIndex:indexPath.row + rc];
 		if (trait){
             if (trait.description && trait.description.length>0 && [[trait.description substringToIndex:1] compare:@"@"]==NSOrderedSame){
-				[cell setText:[trait.description substringFromIndex:1]];
+				[cell.textLabel setText:[trait.description substringFromIndex:1]];
 			} else		
-				[cell setText:NSLocalizedString(trait.description,@"")];
+				[cell.textLabel setText:NSLocalizedString(trait.description,@"")];
 		}
 	//[Trait release];
     
@@ -214,7 +214,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 	if (indexPath.section == 6 && indexPath.row == [[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:6] uniqueId]){
 		TraitsNewViewController *viewController = [[TraitsNewViewController alloc] initWithNibName:@"TraitsNewViewController" bundle:[NSBundle mainBundle]];
 		[viewController setFace: face];
-		[self presentModalViewController:viewController animated:YES];
+		[self presentViewController:viewController animated:YES completion: NULL];
 		[viewController release];
 		isNew = YES;
 		return;

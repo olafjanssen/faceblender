@@ -197,7 +197,7 @@
 	NSMutableArray *settings;
 	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"settings.ser"];
 	settings = [NSMutableArray arrayWithContentsOfFile:filePath];
-	NSString *newStr2 = [NSString stringWithString:@"YES"];
+	NSString *newStr2 = @"YES";
 	if (settings.count>2)
 		[settings replaceObjectAtIndex:2 withObject:newStr2];
 	[settings writeToFile:filePath atomically:YES];

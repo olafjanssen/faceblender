@@ -11,7 +11,7 @@
 
 @implementation OneByOneViewController
 @synthesize appDelegate, faceTable, imageView, navItem;
-@synthesize newItem;
+@synthesize theNewItem;
 @synthesize transformer, mixData, curBitmapData, result;
 @synthesize transform, colorSpace, cgctx, mix_,mixMax_,mixCnt_;
 @synthesize reswidth,resheight, faceToBlend, timesToBlend, waitTimer,activityView;
@@ -88,7 +88,7 @@
 - (void)dealloc {
 	if (imageView) [imageView release]; imageView = nil;
 	appDelegate = nil;
-	if (newItem) [newItem release]; newItem = nil;
+	if (theNewItem) [theNewItem release]; theNewItem = nil;
 	if (navItem) [navItem release]; navItem = nil;
 	if (transformer) [transformer release]; transformer = nil;
 	if (mixData) { free(mixData); mixData = nil; }
@@ -124,19 +124,19 @@
 -(void)doDoneButton {
 	[self finalizeMix];
 	[self finishUp];
-	[self dismissModalViewControllerAnimated:YES];	
+	[self dismissViewControllerAnimated:YES completion: NULL];
 }
 
 -(void)doCancelButton {
 	[self finishUp];
-	[self dismissModalViewControllerAnimated:YES];	
+	[self dismissViewControllerAnimated:YES completion: NULL];
 }
 
 // MIXER STUFF
 
 -(void) finishUp{
 	// free data
-	if (newItem) [newItem release]; newItem = nil;
+	if (theNewItem) [theNewItem release]; theNewItem = nil;
 	CGColorSpaceRelease(colorSpace);
 	free(mixData); mixData  = nil;
 	free(curBitmapData); curBitmapData = nil;
@@ -208,15 +208,15 @@
     [imageView setImage:result];
     //save result to disk
     NSData *pngimage = UIImagePNGRepresentation(result);
-	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:newItem.imageName];
+	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:theNewItem.imageName];
 	
     [pngimage writeToFile:filePath atomically:YES];
 	
 	CGImageRelease(imgRef);	
 	
-	[IconMaker makeIconItem:newItem];
+	[IconMaker makeIconItem:theNewItem];
 	
-	[appDelegate.galleryDatabaseDelegate saveImage:newItem];
+	[appDelegate.galleryDatabaseDelegate saveImage:theNewItem];
 }
 
 
@@ -224,9 +224,9 @@
 	[self loadSettings];
 	    
     // prepare object
-    newItem = [[GalleryItem alloc] init];
-    [newItem setUniqueId: (arc4random() % 20000) + 1];
-    [newItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [newItem uniqueId]]];
+    theNewItem = [[GalleryItem alloc] init];
+    [theNewItem setUniqueId: (arc4random() % 20000) + 1];
+    [theNewItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [theNewItem uniqueId]]];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -237,9 +237,9 @@
     NSString* currentTime = [dateFormatter stringFromDate:[NSDate date]];
     [dateFormatter release];
     
-    [newItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
-    [newItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXFacesKey",@""), appDelegate.faceDatabaseDelegate.faces.count] ];
-    [newItem setDescription:NSLocalizedString(@"OneByOneKey",@"")]; //needlocal
+    [theNewItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
+    [theNewItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXFacesKey",@""), appDelegate.faceDatabaseDelegate.faces.count] ];
+    [theNewItem setDescription:NSLocalizedString(@"OneByOneKey",@"")]; //needlocal
 	
 }
 
@@ -291,9 +291,9 @@
     CGPoint c1= CGPointMake(b1.x/reswidth,b1.y/resheight);
 	CGPoint c2 = CGPointMake(b2.x/reswidth,b2.y/resheight);
 	
-	[newItem setPoint:c0 at:0];
-	[newItem setPoint:c1 at:1];
-	[newItem setPoint:c2 at:2];
+	[theNewItem setPoint:c0 at:0];
+	[theNewItem setPoint:c1 at:1];
+	[theNewItem setPoint:c2 at:2];
 	
     [transformer setDestPointsP0x: b0.x P0y: b0.y P1x: b1.x P1y: b1.y P2x: b2.x P2y: b2.y];
 	
@@ -536,7 +536,7 @@
     cellRectangle = CGRectMake(0.0, 0.0, 72.5, 72.5);
 	
     //Initialize a UITableViewCell with the rectangle we created.
-    UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:cellRectangle reuseIdentifier:identifier] autorelease];
+    UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
     	
     //Create a rectangle container for the number text.
     cellRectangle = CGRectMake(0,5,80,90);
@@ -548,7 +548,7 @@
 	
 	UIButton *badge = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	//[badge setTitle:[NSString stringWithFormat:@"%d",faceCount[indexPath.row]] forState:UIControlStateNormal];
-	[badge setFont:[UIFont fontWithName:@"Arial" size:12]];
+	[badge.titleLabel setFont:[UIFont fontWithName:@"Arial" size:12]];
 	[badge setEnabled:NO];
 	[badge setUserInteractionEnabled:NO];
 	[badge setShowsTouchWhenHighlighted:NO];
@@ -600,13 +600,13 @@
 		
 		if (mixCnt_==0){
 			timesToBlend = 1;
-			faceToBlend = indexPath.row;
+			faceToBlend = (int)indexPath.row;
 			faceCount[ indexPath.row ]++;
 			[self firstMix:[appDelegate.faceDatabaseDelegate.faces objectAtIndex:indexPath.row]];
 		} else {
 			if (faceToBlend==-1 || indexPath.row == faceToBlend){
 				timesToBlend++;
-				faceToBlend = indexPath.row;
+				faceToBlend = (int)indexPath.row;
 				faceCount[ indexPath.row ]++;
 
 			if (waitTimer){

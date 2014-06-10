@@ -88,7 +88,7 @@
 				
 				
                 GalleryItem *galleryItem = [[GalleryItem alloc] init];
-                [galleryItem setUniqueId:aUid];
+                [galleryItem setUniqueId:(int)aUid];
                 [galleryItem setImageName:aImageName];
                 [galleryItem setTitle:aTitle];
                 [galleryItem setMethod:aMethod];

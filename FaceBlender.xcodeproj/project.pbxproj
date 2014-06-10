@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086F39771947A1840068C275 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 086F39761947A1840068C275 /* Default-568h@2x.png */; };
 		08CEFAD70ED499AF00B92916 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CEFAD60ED499AE00B92916 /* libsqlite3.0.dylib */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -32,17 +33,6 @@
 		6A60F38F0F9B2369005DE80E /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A60F38E0F9B2369005DE80E /* AddressBookUI.framework */; };
 		6A60F5090F9BD74E005DE80E /* TraitsNewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A60F5080F9BD74E005DE80E /* TraitsNewViewController.m */; };
 		6A60F50D0F9BD7FF005DE80E /* TraitsNewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A60F50C0F9BD7FF005DE80E /* TraitsNewViewController.xib */; };
-		6A6B7B1C0FCD58B9006F1411 /* FBConnectGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B0A0FCD58B9006F1411 /* FBConnectGlobal.m */; };
-		6A6B7B1D0FCD58B9006F1411 /* FBSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B0C0FCD58B9006F1411 /* FBSession.m */; };
-		6A6B7B1E0FCD58B9006F1411 /* FBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B0E0FCD58B9006F1411 /* FBRequest.m */; };
-		6A6B7B1F0FCD58B9006F1411 /* FBXMLHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B100FCD58B9006F1411 /* FBXMLHandler.m */; };
-		6A6B7B200FCD58B9006F1411 /* FBLoginButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B120FCD58B9006F1411 /* FBLoginButton.m */; };
-		6A6B7B210FCD58B9006F1411 /* FBDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B140FCD58B9006F1411 /* FBDialog.m */; };
-		6A6B7B220FCD58B9006F1411 /* FBLoginDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B160FCD58B9006F1411 /* FBLoginDialog.m */; };
-		6A6B7B230FCD58B9006F1411 /* FBPermissionDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B180FCD58B9006F1411 /* FBPermissionDialog.m */; };
-		6A6B7B240FCD58B9006F1411 /* FBFeedDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B1A0FCD58B9006F1411 /* FBFeedDialog.m */; };
-		6A6B7B250FCD58B9006F1411 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6A6B7B1B0FCD58B9006F1411 /* FBConnect.bundle */; };
-		6A6B7B6B0FCD5B16006F1411 /* FBSessionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A6B7B6A0FCD5B16006F1411 /* FBSessionController.m */; };
 		6A7226740F53EBA500297C97 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7226730F53EBA500297C97 /* Icon.png */; };
 		6A72B2110F2217F5005C0E1E /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6A72B2100F2217F5005C0E1E /* Entitlements.plist */; };
 		6A9A635E0F59B10A00859F7B /* EmptyIcon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6A9A635C0F59B10A00859F7B /* EmptyIcon.jpg */; };
@@ -120,6 +110,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		086F39761947A1840068C275 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		08CEFAD60ED499AE00B92916 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* FaceBlender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceBlender.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,28 +152,6 @@
 		6A60F5070F9BD74E005DE80E /* TraitsNewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TraitsNewViewController.h; sourceTree = "<group>"; };
 		6A60F5080F9BD74E005DE80E /* TraitsNewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TraitsNewViewController.m; sourceTree = "<group>"; };
 		6A60F50C0F9BD7FF005DE80E /* TraitsNewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = TraitsNewViewController.xib; path = XIBs/TraitsNewViewController.xib; sourceTree = "<group>"; };
-		6A6B7B080FCD58B9006F1411 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnect.h; path = "../fbconnect-iphone/src/FBConnect/FBConnect.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B090FCD58B9006F1411 /* FBConnectGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBConnectGlobal.h; path = "../fbconnect-iphone/src/FBConnect/FBConnectGlobal.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B0A0FCD58B9006F1411 /* FBConnectGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBConnectGlobal.m; path = "../fbconnect-iphone/src/FBConnectGlobal.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B0B0FCD58B9006F1411 /* FBSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBSession.h; path = "../fbconnect-iphone/src/FBConnect/FBSession.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B0C0FCD58B9006F1411 /* FBSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBSession.m; path = "../fbconnect-iphone/src/FBSession.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B0D0FCD58B9006F1411 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBRequest.h; path = "../fbconnect-iphone/src/FBConnect/FBRequest.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B0E0FCD58B9006F1411 /* FBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBRequest.m; path = "../fbconnect-iphone/src/FBRequest.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B0F0FCD58B9006F1411 /* FBXMLHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBXMLHandler.h; path = "../fbconnect-iphone/src/FBXMLHandler.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B100FCD58B9006F1411 /* FBXMLHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBXMLHandler.m; path = "../fbconnect-iphone/src/FBXMLHandler.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B110FCD58B9006F1411 /* FBLoginButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLoginButton.h; path = "../fbconnect-iphone/src/FBConnect/FBLoginButton.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B120FCD58B9006F1411 /* FBLoginButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLoginButton.m; path = "../fbconnect-iphone/src/FBLoginButton.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B130FCD58B9006F1411 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBDialog.h; path = "../fbconnect-iphone/src/FBConnect/FBDialog.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B140FCD58B9006F1411 /* FBDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBDialog.m; path = "../fbconnect-iphone/src/FBDialog.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B150FCD58B9006F1411 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBLoginDialog.h; path = "../fbconnect-iphone/src/FBConnect/FBLoginDialog.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B160FCD58B9006F1411 /* FBLoginDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBLoginDialog.m; path = "../fbconnect-iphone/src/FBLoginDialog.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B170FCD58B9006F1411 /* FBPermissionDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBPermissionDialog.h; path = "../fbconnect-iphone/src/FBConnect/FBPermissionDialog.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B180FCD58B9006F1411 /* FBPermissionDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBPermissionDialog.m; path = "../fbconnect-iphone/src/FBPermissionDialog.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B190FCD58B9006F1411 /* FBFeedDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBFeedDialog.h; path = "../fbconnect-iphone/src/FBConnect/FBFeedDialog.h"; sourceTree = SOURCE_ROOT; };
-		6A6B7B1A0FCD58B9006F1411 /* FBFeedDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBFeedDialog.m; path = "../fbconnect-iphone/src/FBFeedDialog.m"; sourceTree = SOURCE_ROOT; };
-		6A6B7B1B0FCD58B9006F1411 /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FBConnect.bundle; path = "../fbconnect-iphone/src/FBConnect.bundle"; sourceTree = SOURCE_ROOT; };
-		6A6B7B690FCD5B16006F1411 /* FBSessionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSessionController.h; sourceTree = "<group>"; };
-		6A6B7B6A0FCD5B16006F1411 /* FBSessionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBSessionController.m; sourceTree = "<group>"; };
 		6A7226730F53EBA500297C97 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = icons/Icon.png; sourceTree = "<group>"; };
 		6A72B2100F2217F5005C0E1E /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		6A9A635C0F59B10A00859F7B /* EmptyIcon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = EmptyIcon.jpg; path = icons/EmptyIcon.jpg; sourceTree = "<group>"; };
@@ -325,8 +294,8 @@
 		29B97314FDCFA39411CA2CEA /* FaceBlender */ = {
 			isa = PBXGroup;
 			children = (
+				086F39761947A1840068C275 /* Default-568h@2x.png */,
 				6AFA68C10FCECCF600C533AB /* MiniZip */,
-				6A6B7B070FCD58B9006F1411 /* FBConnect */,
 				6AB31A250F532E3700FFD4D9 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -450,33 +419,6 @@
 			name = SQL;
 			sourceTree = "<group>";
 		};
-		6A6B7B070FCD58B9006F1411 /* FBConnect */ = {
-			isa = PBXGroup;
-			children = (
-				6A6B7B080FCD58B9006F1411 /* FBConnect.h */,
-				6A6B7B090FCD58B9006F1411 /* FBConnectGlobal.h */,
-				6A6B7B0A0FCD58B9006F1411 /* FBConnectGlobal.m */,
-				6A6B7B0B0FCD58B9006F1411 /* FBSession.h */,
-				6A6B7B0C0FCD58B9006F1411 /* FBSession.m */,
-				6A6B7B0D0FCD58B9006F1411 /* FBRequest.h */,
-				6A6B7B0E0FCD58B9006F1411 /* FBRequest.m */,
-				6A6B7B0F0FCD58B9006F1411 /* FBXMLHandler.h */,
-				6A6B7B100FCD58B9006F1411 /* FBXMLHandler.m */,
-				6A6B7B110FCD58B9006F1411 /* FBLoginButton.h */,
-				6A6B7B120FCD58B9006F1411 /* FBLoginButton.m */,
-				6A6B7B130FCD58B9006F1411 /* FBDialog.h */,
-				6A6B7B140FCD58B9006F1411 /* FBDialog.m */,
-				6A6B7B150FCD58B9006F1411 /* FBLoginDialog.h */,
-				6A6B7B160FCD58B9006F1411 /* FBLoginDialog.m */,
-				6A6B7B170FCD58B9006F1411 /* FBPermissionDialog.h */,
-				6A6B7B180FCD58B9006F1411 /* FBPermissionDialog.m */,
-				6A6B7B190FCD58B9006F1411 /* FBFeedDialog.h */,
-				6A6B7B1A0FCD58B9006F1411 /* FBFeedDialog.m */,
-				6A6B7B1B0FCD58B9006F1411 /* FBConnect.bundle */,
-			);
-			name = FBConnect;
-			sourceTree = "<group>";
-		};
 		6AB31A250F532E3700FFD4D9 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -595,8 +537,6 @@
 				6AB31A530F532E4E00FFD4D9 /* NSDataM64.m */,
 				6AB31A560F532E4E00FFD4D9 /* Resizer.h */,
 				6AB31A570F532E4E00FFD4D9 /* Resizer.m */,
-				6A6B7B690FCD5B16006F1411 /* FBSessionController.h */,
-				6A6B7B6A0FCD5B16006F1411 /* FBSessionController.m */,
 				6AFA67680FCEA48D00C533AB /* DownloadController.h */,
 				6AFA67690FCEA48D00C533AB /* DownloadController.m */,
 			);
@@ -643,8 +583,17 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				TargetAttributes = {
+					1D6058900D05DD3D006BFB54 = {
+						DevelopmentTeam = CU3Z5M9BXQ;
+					};
+				};
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FaceBlender" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
 				English,
@@ -695,6 +644,7 @@
 				6AB31E3B0F53357C00FFD4D9 /* lefteye4.png in Resources */,
 				6AB31E3C0F53357C00FFD4D9 /* lips4.png in Resources */,
 				6AB31E3D0F53357C00FFD4D9 /* rightarrow2.png in Resources */,
+				086F39771947A1840068C275 /* Default-568h@2x.png in Resources */,
 				6AB31E3E0F53357C00FFD4D9 /* righteye.png in Resources */,
 				6AB31E400F53357C00FFD4D9 /* righteye4.png in Resources */,
 				6AB31E630F53359300FFD4D9 /* gallery_523.png in Resources */,
@@ -723,7 +673,6 @@
 				6A3687910F98F16600627861 /* Gallery.sql in Resources */,
 				6A3687A80F98F37F00627861 /* Default.png in Resources */,
 				6A60F50D0F9BD7FF005DE80E /* TraitsNewViewController.xib in Resources */,
-				6A6B7B250FCD58B9006F1411 /* FBConnect.bundle in Resources */,
 				6A11EAB60FCFE37300EB8206 /* FacebookPickerController.xib in Resources */,
 				6A2CDBB10FD116A800D1D012 /* OneByOneViewController.xib in Resources */,
 			);
@@ -766,16 +715,6 @@
 				6AB31A7F0F532E4E00FFD4D9 /* Transformer.m in Sources */,
 				6AB2C45E0F5FB5E2000A3BBD /* IconMaker.m in Sources */,
 				6A60F5090F9BD74E005DE80E /* TraitsNewViewController.m in Sources */,
-				6A6B7B1C0FCD58B9006F1411 /* FBConnectGlobal.m in Sources */,
-				6A6B7B1D0FCD58B9006F1411 /* FBSession.m in Sources */,
-				6A6B7B1E0FCD58B9006F1411 /* FBRequest.m in Sources */,
-				6A6B7B1F0FCD58B9006F1411 /* FBXMLHandler.m in Sources */,
-				6A6B7B200FCD58B9006F1411 /* FBLoginButton.m in Sources */,
-				6A6B7B210FCD58B9006F1411 /* FBDialog.m in Sources */,
-				6A6B7B220FCD58B9006F1411 /* FBLoginDialog.m in Sources */,
-				6A6B7B230FCD58B9006F1411 /* FBPermissionDialog.m in Sources */,
-				6A6B7B240FCD58B9006F1411 /* FBFeedDialog.m in Sources */,
-				6A6B7B6B0FCD5B16006F1411 /* FBSessionController.m in Sources */,
 				6ACAC1560FCD8FC6003C6FA9 /* Reachability.m in Sources */,
 				6AFA676A0FCEA48D00C533AB /* DownloadController.m in Sources */,
 				6AFA68B10FCECC2C00C533AB /* ZipController.m in Sources */,
@@ -833,8 +772,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Awoken Well";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Awoken Well";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DEBUGGING_SYMBOLS = default;
 				GCC_DYNAMIC_NO_PIC = YES;
@@ -844,18 +783,19 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FaceBlender_Prefix.pch;
 				GCC_THUMB_SUPPORT = YES;
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GENERATE_PROFILING_CODE = NO;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = FaceBlender;
-				PROVISIONING_PROFILE = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -863,38 +803,38 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Awoken Well";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Awoken Well";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FaceBlender_Prefix.pch;
 				GCC_THUMB_SUPPORT = YES;
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = FaceBlender;
-				PROVISIONING_PROFILE = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};
 		6A0775470F5AA7D100B06A90 /* Release App Store Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "../fbconnect-iphone/src";
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos;
 			};
 			name = "Release App Store Distribution";
 		};
@@ -903,38 +843,38 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Awoken Well";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Awoken Well";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FaceBlender_Prefix.pch;
 				GCC_THUMB_SUPPORT = YES;
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = FaceBlender;
-				PROVISIONING_PROFILE = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos;
 			};
 			name = "Release App Store Distribution";
 		};
 		6AD113530F20E58C0065AD4E /* Release Ad Hoc Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "../fbconnect-iphone/src";
 				PREBINDING = NO;
-				SDKROOT = iphoneos2.1;
+				SDKROOT = iphoneos;
 			};
 			name = "Release Ad Hoc Distribution";
 		};
@@ -943,8 +883,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Awoken Well";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Awoken Well";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_ENABLE_FLOATING_POINT_LIBRARY_CALLS = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -952,24 +892,24 @@
 				GCC_PREFIX_HEADER = FaceBlender_Prefix.pch;
 				GCC_THUMB_SUPPORT = YES;
 				GCC_UNROLL_LOOPS = NO;
-				GCC_VERSION = 4.0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = FaceBlender;
-				PROVISIONING_PROFILE = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "62152DCA-3DF7-47E1-92E6-49F01AF063E3";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos;
 			};
 			name = "Release Ad Hoc Distribution";
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Awoken Well";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -978,14 +918,13 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "25C34AAD-9FFB-4A1F-A5BF-B7C51AFF7AD6";
-				SDKROOT = iphoneos2.2.1;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Olaf Janssen";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -993,7 +932,7 @@
 				HEADER_SEARCH_PATHS = "../fbconnect-iphone/src";
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "06883D9E-1703-47D0-88BD-8C9C783861E3";
-				SDKROOT = iphoneos2.2;
+				SDKROOT = iphoneos;
 			};
 			name = Release;
 		};

@@ -10,7 +10,6 @@
 #import "FaceDatabaseDelegate.h"
 #import "GalleryDatabaseDelegate.h"
 #import "ManualViewController.h"
-#import "FBSessionController.h"
 
 @interface FaceBlenderAppDelegate : NSObject <UIApplicationDelegate, UITabBarControllerDelegate, UIImagePickerControllerDelegate> {
     BOOL firstLoad;
@@ -19,7 +18,6 @@
     //UIImagePickerController* imagePickerController;
     FaceDatabaseDelegate *faceDatabaseDelegate;
     GalleryDatabaseDelegate *galleryDatabaseDelegate;
-	FBSessionController *fbc;
 	
 	const NSString *documentsDir;
 	NSMutableArray *settings;
@@ -30,11 +28,10 @@
 	NSString *activityText;
 }
 
-@property ( retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
 @property ( retain) IBOutlet UITabBarController *tabBarController;
 @property ( retain) FaceDatabaseDelegate *faceDatabaseDelegate;
 @property ( retain) GalleryDatabaseDelegate *galleryDatabaseDelegate;
-@property (retain ) FBSessionController *fbc;
 @property ( retain) const NSString *documentsDir;
 @property ( retain) NSMutableArray *settings;
 @property (retain) NSAutoreleasePool *pool;

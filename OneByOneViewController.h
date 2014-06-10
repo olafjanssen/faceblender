@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FaceBlenderAppDelegate.h";
-#import "Face.h";
-#import "GalleryItem.h";
-#import "Transformer.h";
-#import "IconMaker.h";
+#import "FaceBlenderAppDelegate.h"
+#import "Face.h"
+#import "GalleryItem.h"
+#import "Transformer.h"
+#import "IconMaker.h"
 
 @interface OneByOneViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     FaceBlenderAppDelegate *appDelegate;
@@ -27,7 +27,7 @@
 	int resheight;
 	BOOL doAura;
 	BOOL isDone;
-	GalleryItem *newItem;
+	GalleryItem *theNewItem;
 	Transformer *transformer;
 	NSTimer *waitTimer;
 	int faceToBlend;
@@ -48,7 +48,7 @@
 @property (retain) FaceBlenderAppDelegate *appDelegate;
 @property (retain) IBOutlet UITableView *faceTable;
 @property (retain) IBOutlet UIImageView *imageView;
-@property (retain) GalleryItem *newItem;
+@property (retain) GalleryItem *theNewItem;
 @property (retain) Transformer *transformer;
 @property ( retain) IBOutlet UINavigationItem *navItem;
 @property (retain) NSTimer *waitTimer;

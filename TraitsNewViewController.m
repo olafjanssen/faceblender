@@ -124,7 +124,7 @@
 	
 	[textField resignFirstResponder];
 	[textField removeFromSuperview];
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion: NULL];
 	return YES;
 }
 
@@ -137,7 +137,7 @@
 {
 	[txtFld resignFirstResponder];
 	[txtFld removeFromSuperview];
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion: NULL];
 }
 
 
@@ -177,7 +177,7 @@
     cellRectangle = CGRectMake(0.0, 0.0, 320-40, 200);
 	
     //Initialize a UITableViewCell with the rectangle we created.
-    UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:cellRectangle reuseIdentifier:identifier] autorelease];
+    UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
 	
     return cell;
 }

@@ -11,9 +11,9 @@
 #import "FaceBlenderAppDelegate.h"
 #import "GalleryItemViewController.h"
 #import "ManualViewController.h"
-#import "GalleryItemRenameViewController.h";
-#import "DownloadController.h";
-#import "OneByOneViewController.h";
+#import "GalleryItemRenameViewController.h"
+#import "DownloadController.h"
+#import "OneByOneViewController.h"
 
 @interface GalleryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UIActionSheetDelegate> {
     MixerController *mixerView;

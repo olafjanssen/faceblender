@@ -43,7 +43,7 @@
 */
 -(IBAction)startButton {
 //	[self.view removeFromSuperview];
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:NO completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

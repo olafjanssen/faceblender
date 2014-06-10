@@ -15,7 +15,6 @@
 @synthesize tabBarController;
 @synthesize faceDatabaseDelegate;
 @synthesize galleryDatabaseDelegate;
-@synthesize fbc;
 @synthesize documentsDir;
 @synthesize settings;
 @synthesize pool,firstLoad;
@@ -45,9 +44,9 @@
 	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"ticktockV1.1.000"];
 	if (! [fileManager fileExistsAtPath:filePath]){
 		firstLoad = YES;
-		[[NSString stringWithFormat:@"Tick Tock!"] writeToFile:filePath atomically:YES];
+		[[NSString stringWithFormat:@"Tick Tock!"] writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error: NULL];
 		ManualViewController *manualController = [[ManualViewController alloc] initWithNibName:@"ManualViewController" bundle:nil];
-		[tabBarController presentModalViewController:manualController animated:YES];
+        [tabBarController presentViewController:manualController animated:YES completion:nil];
 		[manualController.view setBackgroundColor:[UIColor groupTableViewBackgroundColor]];
 		[manualController release];
 	} 
@@ -65,9 +64,6 @@
 
 	// Load the Databases
 	faceDatabaseDelegate = [[FaceDatabaseDelegate alloc] init];
-
-	fbc = [[FBSessionController alloc] init];
-	[fbc startSession];
 	
 //	imagePickerController = [[UIImagePickerController alloc] init];
 	[NSThread detachNewThreadSelector:@selector(loadDatabases) toTarget:self withObject:nil];
@@ -148,7 +144,7 @@
 	[activityLabel setTextColor:[UIColor whiteColor]];
 	
 	[activityLabel setBackgroundColor:[UIColor clearColor]];
-	[activityLabel setTextAlignment:UITextAlignmentCenter];
+	[activityLabel setTextAlignment:NSTextAlignmentCenter];
 	
 	[activityView addSubview:activityLabel];
 	[activityLabel release];
@@ -158,7 +154,7 @@
 
 	if (activityView.subviews.count>0)
 		[[[activityView subviews] objectAtIndex:0] startAnimating];
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];   
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];   
 	
 	[pool release];
 }

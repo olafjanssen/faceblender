@@ -7,6 +7,7 @@
 //
 
 #import "FaceSelectorScrollView.h"
+#import "FaceSelectorViewController.h"
 
 @implementation FaceSelectorScrollView
 @synthesize navController, startPosition;
@@ -62,12 +63,12 @@
 			float dist = sqrt((position.x-startPosition.x)*(position.x-startPosition.x) + (position.y-startPosition.y)*(position.y-startPosition.y));
 			if (dist>20) return;
 			
-			position = [[allTouches anyObject] locationInView: [self.delegate fakeView]];
+			position = [[allTouches anyObject] locationInView: [(FaceSelectorViewController *)self.delegate fakeView]];
 
 			
 			int cnt = (int)((position.y-buf)/sz) * 4 + (position.x-buf)/sz;
 			
-			[self.delegate doSelection:cnt];
+			[(FaceSelectorViewController *)self.delegate doSelection:cnt];
 			break;
 				case 2:
 					break;

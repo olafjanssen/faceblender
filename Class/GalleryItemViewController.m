@@ -119,7 +119,7 @@
 	
 	hideTimer = [NSTimer scheduledTimerWithTimeInterval:3.0f target:self selector:@selector(hideNavBar) userInfo:nil repeats:NO];
 	
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];   
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 	//	[[UIApplication sharedApplication] setStatusBarHidden:YES];   
 	
 	[self.view bringSubviewToFront:toolBar];
@@ -135,7 +135,7 @@
 	GalleryItemRenameViewController *viewController = [[GalleryItemRenameViewController alloc] initWithNibName:@"GalleryItemRenameViewController" bundle:[NSBundle mainBundle]];
 	
 	[viewController setGalleryItem:galleryItem];
-	[self presentModalViewController:viewController animated:YES];
+	[self presentViewController:viewController animated:YES completion:nil];
 	[viewController release];
 }
 
@@ -157,7 +157,7 @@
 	
 	if (index<0) index = 0;
 	if (index>[appDelegate.galleryDatabaseDelegate.galleryItems count]-1)
-		index = [appDelegate.galleryDatabaseDelegate.galleryItems count]-1; 
+		index = (int)[appDelegate.galleryDatabaseDelegate.galleryItems count]-1;
 	
 	if (appDelegate.galleryDatabaseDelegate.galleryItems.count>index)
 		galleryItem = (GalleryItem *)[appDelegate.galleryDatabaseDelegate.galleryItems objectAtIndex:index];
@@ -316,12 +316,7 @@
 }
 
 -(void)continueUpload {
-	if (!appDelegate.fbc.isLoggedIn) return;
-	[activityView removeFromSuperview];
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];   
-	[activityView release];
-	activityView = nil;
-	[self uploadToFacebook];
+    // do nothing
 }
 
 -(void)cancelUpload {
@@ -332,56 +327,7 @@
 }
 
 -(void)uploadToFacebook {
-	// check if logged in
-	if (!appDelegate.fbc.isLoggedIn){
-		FBLoginButton *loginButton = [[[FBLoginButton alloc] init] autorelease];
-		[loginButton setStyle:FBLoginButtonStyleWide];
-		CGRect brect = loginButton.frame;
-		brect.origin.x = 115;
-		brect.origin.y = 200;
-		[loginButton setFrame:brect];
-		
-		UIButton *continueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[continueButton setTitle:@"Continue" forState:UIControlStateNormal];
-		[continueButton addTarget:self action:@selector(continueUpload) forControlEvents:UIControlEventTouchDown];
-		UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-		[cancelButton addTarget:self action:@selector(cancelUpload) forControlEvents:UIControlEventTouchDown];
-
-		
-		[continueButton setFrame:CGRectMake(20,260,100,30)];
-		[cancelButton setFrame:CGRectMake(200,260,100,30)];
-									
-		activityView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, appDelegate.window.bounds.size.width, appDelegate.window.bounds.size.height)];
-		activityView.backgroundColor = [UIColor blackColor];
-		activityView.alpha = 0.8;
-		[activityView addSubview:loginButton];				
-		[activityView addSubview:continueButton];				
-		[activityView addSubview:cancelButton];				
-
-		[appDelegate.window addSubview: activityView];
-		
-		[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];   
-		//[activityView release];
-		
-		
-	} else
-	// check internet
-	if (![appDelegate.fbc isConnected]){
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No internet!" //needlocal
-														message:@"Host cannot be reached." //needlocal
-													   delegate:self 
-											  cancelButtonTitle:nil 
-											  otherButtonTitles:NSLocalizedString(@"OkKey",@""),nil];
-		[alert show];
-		[alert release];
-	} else{
-		// upload request
-		appDelegate.activityText = @"Uploading Photo..."; //needlocal
-		[NSThread detachNewThreadSelector:@selector(showActivityViewer) toTarget:appDelegate withObject:nil];
-		[appDelegate.fbc uploadImage:imageView.image text:galleryItem.description];
-		//[appDelegate hideActivityViewer];
-	}
+	// do nothing
 }
 
 -(void)import {
@@ -463,7 +409,7 @@
 	[scrollView setMode:0];
 }
 
-- (void)scrollViewDidEndZooming:(UIScrollView *)sv withView:(UIView *)view atScale:(float)scale {
+- (void)scrollViewDidEndZooming:(UIScrollView *)sv withView:(UIView *)view atScale:(CGFloat)scale {
 	if (sv.subviews.count<=2) return;
 	
 	CGRect frame = [[[sv subviews] objectAtIndex:2] frame];

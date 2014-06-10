@@ -137,12 +137,7 @@
 */
 
 -(void)continuePick {
-	if (!appDelegate.fbc.isLoggedIn) return;
-	[activityView removeFromSuperview];
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];   
-	[activityView release];
-	activityView = nil;
-	[self facebookPick];
+    // do nothing
 }
 
 -(void)cancelPick {
@@ -153,49 +148,7 @@
 }
 
 -(void) facebookPick {
-// check if logged in
-if (!appDelegate.fbc.isLoggedIn){
-	FBLoginButton *loginButton = [[[FBLoginButton alloc] init] autorelease];
-	[loginButton setStyle:FBLoginButtonStyleWide];
-	CGRect brect = loginButton.frame;
-	brect.origin.x = 115;
-	brect.origin.y = 200;
-	[loginButton setFrame:brect];
-	
-	UIButton *continueButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[continueButton setTitle:@"Continue" forState:UIControlStateNormal];
-	[continueButton addTarget:self action:@selector(continuePick) forControlEvents:UIControlEventTouchDown];
-	UIButton *cancelButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
-	[cancelButton addTarget:self action:@selector(cancelPick) forControlEvents:UIControlEventTouchDown];
-	
-	[continueButton setFrame:CGRectMake(20,260,100,30)];
-	[cancelButton setFrame:CGRectMake(200,260,100,30)];
-	
-	activityView = [[UIView alloc] initWithFrame: CGRectMake(0, 0, appDelegate.window.bounds.size.width, appDelegate.window.bounds.size.height)];
-	activityView.backgroundColor = [UIColor blackColor];
-	activityView.alpha = 0.8;
-	[activityView addSubview:loginButton];				
-	[activityView addSubview:continueButton];				
-	[activityView addSubview:cancelButton];				
-	
-	[appDelegate.window addSubview: activityView];
-	
-	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackOpaque];   
-} else
-// check internet
-if (![appDelegate.fbc isConnected]){
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No internet!" //needlocal
-													message:@"Host cannot be reached." //needlocal
-												   delegate:self 
-										  cancelButtonTitle:nil 
-										  otherButtonTitles:NSLocalizedString(@"OkKey",@""),nil];
-	[alert show];
-	[alert release];
-} else{
-	[self.navigationController pushViewController:self.faceView animated:NO];
-	[self.faceView pickImageFromFacebook];
-}
+    // do nothing
 }
 
 

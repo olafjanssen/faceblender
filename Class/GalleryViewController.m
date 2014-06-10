@@ -262,22 +262,22 @@
 	
     switch (buttonIndex){
         case 0:
-            [self presentModalViewController:self.mixerView animated:YES];
+            [self presentViewController:self.mixerView animated:YES completion: NULL];
             [NSTimer scheduledTimerWithTimeInterval:0.5f target:mixerView selector:@selector(mixAll) userInfo:nil repeats:NO];
             break;
         case 1:
-            [self presentModalViewController:self.mixerView animated:YES];
+            [self presentViewController:self.mixerView animated:YES completion: NULL];
             [self.mixerView mixSelection];
             break;
         case 2:
-            [self presentModalViewController:self.mixerView animated:YES];
+            [self presentViewController:self.mixerView animated:YES completion: NULL];
             [self.mixerView mixTraitLogic];
             break;
 		case 3:
 			mixerView = nil;
 			oneByOneController = [[OneByOneViewController alloc] initWithNibName:@"OneByOneViewController" bundle:nil];
 			//[self.navigationController pushViewController:oneByOneController animated:YES];
-			[self presentModalViewController:oneByOneController animated:YES];
+			[self presentViewController:oneByOneController animated:YES completion: NULL];
 
 			break;
         default:
@@ -379,7 +379,7 @@
     cellRectangle = CGRectMake(0.0, 0.0, 320, 200);
 
     //Initialize a UITableViewCell with the rectangle we created.
-    UITableViewCell *cell = [[[UITableViewCell alloc] initWithFrame:cellRectangle reuseIdentifier:identifier] autorelease];
+    UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier] autorelease];
     
     UIImageView *imageView;
 
@@ -488,13 +488,13 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
     }
         
     [self.navigationController pushViewController:self.galleryItemView animated:YES];
-	[self.galleryItemView setIndex:indexPath.row mode:0];
+	[self.galleryItemView setIndex:(int)indexPath.row mode:0];
 		
 	} else {
 		GalleryItemRenameViewController *viewController = [[GalleryItemRenameViewController alloc] initWithNibName:@"GalleryItemRenameViewController" bundle:[NSBundle mainBundle]];
 		if (tableData.count>indexPath.row){
 			[viewController setGalleryItem:[tableData objectAtIndex:indexPath.row ]];
-			[self presentModalViewController:viewController animated:YES];
+			[self presentViewController:viewController animated:YES completion: NULL];
 		}
 		[viewController release];
 	}
