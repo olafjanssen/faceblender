@@ -46,7 +46,7 @@
 	settings = [NSArray arrayWithContentsOfFile:filePath];
 	
 	if (settings.count>2)
-		if ([[settings objectAtIndex:2] compare:@"YES"] == NSOrderedSame){
+		if ([(NSString *)[settings objectAtIndex:2] compare:@"YES"] == NSOrderedSame){
 	    //[self checkAndCreateDatabase:@"DemoFacesDatabase.sql"];
 		[self readFacesFromDatabase:@"DemoFacesDatabase.sql" res:YES];
 	}
@@ -104,7 +104,7 @@
 		info = [NSDictionary dictionaryWithContentsOfFile: [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"DemoFaceLibrary.xml"]];
 		databasePath = [[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[info objectForKey:@"folder"]] stringByAppendingPathComponent:[info objectForKey:@"sql"]];
 		//databasePath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:dbaseName];
-		NSLog(databasePath);
+		NSLog(databasePath, NULL);
 		if ( ![[NSFileManager defaultManager] fileExistsAtPath:databasePath]){
 			NSLog(@"does not exist");
 		}
@@ -134,7 +134,7 @@
 				
 				if (tmp != NULL)
 					aTraits = [NSString stringWithUTF8String:tmp];
-				else aTraits = [NSString stringWithString:@""];
+				else aTraits = @"";
 					
                 Face *face = [[Face alloc] initWithUniqueID:aUid Name:aName Image:aImageName P0x:aP0x P0y:aP0y P1x:aP1x P1y:aP1y P2x:aP2x P2y:aP2y];
                 if (!isRes){
@@ -155,7 +155,7 @@
 				NSFileManager *fileManager = [NSFileManager defaultManager];
 				NSString *filePath = [documentsDir stringByAppendingPathComponent:face.imageName];
 				if ([fileManager fileExistsAtPath:filePath]){
-					NSLog([NSString stringWithFormat: @"Removing demo file from Documents folder: %@",face.name]);
+					NSLog([NSString stringWithFormat: @"Removing demo file from Documents folder: %@",face.name], NULL);
 					[fileManager removeItemAtPath:filePath error:nil];
 				}			
 				NSString *base = @"tmb_";
@@ -165,11 +165,11 @@
 				NSString *tmbfilePath = [documentsDir stringByAppendingPathComponent:tmbName];
 				NSString *tmb2filePath = [documentsDir stringByAppendingPathComponent:tmbName2];
 				if ([fileManager fileExistsAtPath:tmbfilePath]){
-					NSLog([NSString stringWithFormat: @"Removing demo file from Documents folder: %@",face.name]);
+					NSLog([NSString stringWithFormat: @"Removing demo file from Documents folder: %@",face.name], NULL);
 					[fileManager removeItemAtPath:tmbfilePath error:nil];
 				}			
 				if ([fileManager fileExistsAtPath:tmb2filePath]){
-					NSLog([NSString stringWithFormat: @"Removing demo file from Documents folder: %@",face.name]);
+					NSLog([NSString stringWithFormat: @"Removing demo file from Documents folder: %@",face.name], NULL);
 					[fileManager removeItemAtPath:tmb2filePath error:nil];
 				}			
 				}
@@ -267,11 +267,11 @@
 			}		
 			if (!isFound){
 				if (traitSections.count>6)
-					[[traitSections objectAtIndex:6] setUniqueId: [[traitSections objectAtIndex:6] uniqueId]+1];
+					[(Trait *)[traitSections objectAtIndex:6] setUniqueId: [(Trait *)[traitSections objectAtIndex:6] uniqueId]+1];
 				Trait *trait = [[ Trait alloc] initWithUniqueId:[traits count] Description:[split objectAtIndex:t]];
 				[traits addObject:trait];
 				[trait release];
-				NSLog([split objectAtIndex:t]);
+				NSLog([split objectAtIndex:t], NULL);
 			}
 		}
 	}
@@ -318,7 +318,7 @@
         sqlite3_close(database);
     
     // save in faces object
-    face.index = faces.count;
+    face.index = (int)faces.count;
     [faces addObject:face];
 	[faces sortUsingSelector:@selector(compare:)];
 	

@@ -256,18 +256,19 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectMake(0,0,320,tableView.rowHeight)  reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault  reuseIdentifier:CellIdentifier] autorelease];
     }
 	
     Face *face =nil;
 	if (tableData.count>startIndex[indexPath.section]+ indexPath.row)
 		face = (Face *)[tableData objectAtIndex: startIndex[indexPath.section]+ indexPath.row];
 	
-	[cell setText:face.name];
-	if (face.iconSmall == nil) 
-		[cell setImage:curImage];
-	else 
-		[cell setImage:face.iconSmall];
+	[cell.textLabel setText:face.name];
+	if (face.iconSmall == nil) {
+		[cell.imageView setImage:curImage];
+	} else {
+		[cell.imageView setImage:face.iconSmall];
+    }
 	
     return cell;
 }
@@ -286,7 +287,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
         
 		[tableData removeObjectAtIndex:startIndex[indexPath.section]+ indexPath.row];
 		rowsPerSection[indexPath.section]--;
-		for (int k=indexPath.section+1;k<sects;k++) startIndex[k] -= 1;
+		for (int k=(int)indexPath.section+1;k<sects;k++) startIndex[k] -= 1;
 				
         //Delete the object from the table.
 		if (appDelegate.faceDatabaseDelegate.faces.count == 0){

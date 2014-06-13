@@ -7,7 +7,7 @@
 //
 
 #import "DownloadController.h"
-
+#import "SettingsViewController.h"
 
 @implementation DownloadController
 @synthesize delegate;
@@ -27,7 +27,7 @@
 -(void)isDownloadNeeded {
 	// first see if a demo library file is already available
 	if (![[NSFileManager defaultManager] fileExistsAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"DemoFaceLibrary.xml"]]) {
-		if (delegate) [[delegate demoSwitch] setOn:NO animated:YES];
+		if (delegate) [[(SettingsViewController *)delegate demoSwitch] setOn:NO animated:YES];
 		alert = [[UIAlertView alloc] initWithTitle:@"Download Database" //needlocal
 										   message:@"Would you like to download the free sample database? (approximately 7MB)" //needlocal
 										  delegate:self 
@@ -66,7 +66,7 @@
 	NSMutableArray *settings;
 	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"settings.ser"];
 	settings = [NSMutableArray arrayWithContentsOfFile:filePath];
-	NSString *newStr2 = [NSString stringWithString:@"YES"];
+	NSString *newStr2 = @"YES";
 	if (settings.count>2)
 		[settings replaceObjectAtIndex:2 withObject:newStr2];
 	[settings writeToFile:filePath atomically:YES];
@@ -160,11 +160,11 @@
 	[_connection release];
 	NSLog(@"Connection failed! Error - %@ %@",
 	      [error localizedDescription],
-	      [[error userInfo] objectForKey:NSErrorFailingURLStringKey]);	
+	      [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)_connection {
-   NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
+   NSLog(@"Succeeded! Received %lu bytes of data",(unsigned long)[receivedData length]);
     [_connection release];
     [receivedData release];
 	[filehandle closeFile];
@@ -185,14 +185,16 @@
 }
 
 -(void)storeAndExtractFiles {
-	[[NSFileManager defaultManager] createDirectoryAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[info objectForKey:@"folder"]]  attributes:nil];
-	
+	[[NSFileManager defaultManager] createDirectoryAtPath:[[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[info objectForKey:@"folder"]] withIntermediateDirectories:TRUE attributes:nil error:nil];
+     
 	ZipController *zc = [[ZipController alloc] init];
 	[zc UnzipOpenFile:[NSTemporaryDirectory() stringByAppendingPathComponent:@"download.zip"]];
 	[zc UnzipFileTo: [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:[info objectForKey:@"folder"]] overWrite:YES];
 	[zc release];
 	
-	if (delegate) [[delegate demoSwitch] setOn:YES animated:YES];
+	if (delegate){
+        [[delegate demoSwitch] setOn:YES animated:YES];
+    }
 
 	NSMutableArray *settings;
 	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"settings.ser"];

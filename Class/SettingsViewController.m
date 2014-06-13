@@ -50,13 +50,13 @@
 //	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"settings.ser"];
 	settings = [NSMutableArray arrayWithContentsOfFile:filePath];
 	if (settings.count>3){
-        if ([[settings objectAtIndex:0] compare:@"0.5x"] == NSOrderedSame){ keyRes = 0; }
-        if ([[settings objectAtIndex:0] compare:@"1x"] == NSOrderedSame){ keyRes = 1; }
-	if ([[settings objectAtIndex:0] compare:@"2x"] == NSOrderedSame){ keyRes = 1;}	// 2x is no longer supported
+        if ([(NSString *)[settings objectAtIndex:0] compare:@"0.5x"] == NSOrderedSame){ keyRes = 0; }
+        if ([(NSString *)[settings objectAtIndex:0] compare:@"1x"] == NSOrderedSame){ keyRes = 1; }
+	if ([(NSString *)[settings objectAtIndex:0] compare:@"2x"] == NSOrderedSame){ keyRes = 1;}	// 2x is no longer supported
 	
-	keyTips = ([[settings objectAtIndex:1] compare:@"YES"]==NSOrderedSame);
-	keyDemo = ([[settings objectAtIndex:2] compare:@"YES"]==NSOrderedSame);
-	keyCrop = ([[settings objectAtIndex:3] compare:@"YES"]==NSOrderedSame);
+	keyTips = ([(NSString *)[settings objectAtIndex:1] compare:@"YES"]==NSOrderedSame);
+	keyDemo = ([(NSString *)[settings objectAtIndex:2] compare:@"YES"]==NSOrderedSame);
+	keyCrop = ([(NSString *)[settings objectAtIndex:3] compare:@"YES"]==NSOrderedSame);
 	}
 	isLoaded = NO;
 	
@@ -71,13 +71,13 @@
 	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"settings.ser"];
 	settings = [NSMutableArray arrayWithContentsOfFile:filePath];
 	if (settings.count>3){
-	if ([[settings objectAtIndex:0] compare:@"0.5x"] == NSOrderedSame) keyRes = 0;
-	if ([[settings objectAtIndex:0] compare:@"1x"] == NSOrderedSame) keyRes = 1;
-	if ([[settings objectAtIndex:0] compare:@"2x"] == NSOrderedSame) keyRes = 2;
+	if ([(NSString *)[settings objectAtIndex:0] compare:@"0.5x"] == NSOrderedSame) keyRes = 0;
+	if ([(NSString *)[settings objectAtIndex:0] compare:@"1x"] == NSOrderedSame) keyRes = 1;
+	if ([(NSString *)[settings objectAtIndex:0] compare:@"2x"] == NSOrderedSame) keyRes = 2;
 	
-	keyTips = ([[settings objectAtIndex:1] compare:@"YES"]==NSOrderedSame);
-	keyDemo = ([[settings objectAtIndex:2] compare:@"YES"]==NSOrderedSame);
-	keyCrop = ([[settings objectAtIndex:3] compare:@"YES"]==NSOrderedSame);
+	keyTips = ([(NSString *)[settings objectAtIndex:1] compare:@"YES"]==NSOrderedSame);
+	keyDemo = ([(NSString *)[settings objectAtIndex:2] compare:@"YES"]==NSOrderedSame);
+	keyCrop = ([(NSString *)[settings objectAtIndex:3] compare:@"YES"]==NSOrderedSame);
 	}
 	[self.navigationController.navigationBar setBarStyle:UIBarStyleDefault];
 	[tableView reloadData];

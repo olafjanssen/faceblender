@@ -26,7 +26,7 @@
     FaceBlenderAppDelegate *appDelegate;
     int mode;
     IBOutlet UIProgressView *progressView;
-    GalleryItem *newItem;
+    GalleryItem *theNewItem;
     FaceSelectorViewController *selectorView;
     TraitLogicViewController *traitLogicView;
     IBOutlet UINavigationBar *navBar;
@@ -93,7 +93,7 @@
 @property ( assign) BOOL *toggles;
 @property ( assign) BOOL usedSelector;
 @property ( assign) BOOL usedTraitLogic;
-@property ( assign) GalleryItem *newItem;
+@property ( assign) GalleryItem *theNewItem;
 @property ( retain) FaceSelectorViewController *selectorView;
 @property ( retain) TraitLogicViewController *traitLogicView;
 

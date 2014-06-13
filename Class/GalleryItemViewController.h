@@ -34,7 +34,7 @@
 	IBOutlet UIBarButtonItem *leftButton;
 	IBOutlet UIBarButtonItem *rightButton;
 	IBOutlet UIBarButtonItem *renameButton;
-	UIView *activityView;
+//	UIView *activityView;
 }
 
 @property(retain) IBOutlet UIBarButtonItem *leftButton;

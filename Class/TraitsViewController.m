@@ -36,7 +36,7 @@
 		
 		NSString *tmp = [NSString stringWithString: traitsLst];
 		[traitsLst release];
-		traitsLst = [[NSString alloc] initWithString: [tmp stringByAppendingFormat:strc]];
+		traitsLst = [[NSString alloc] initWithString: [tmp stringByAppendingFormat:strc, ""]];
 		[face.traitsTmp release];
 		face.traitsTmp = nil;
 		[strc release];
@@ -176,7 +176,7 @@
     }
 
 	// adder cell
-	if (indexPath.section == 6 && appDelegate.faceDatabaseDelegate.traitSections.count>6 && indexPath.row == [[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:6] uniqueId]){
+	if (indexPath.section == 6 && appDelegate.faceDatabaseDelegate.traitSections.count>6 && indexPath.row == [(Trait *)[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:6] uniqueId]){
 		[cell.textLabel setText:NSLocalizedString(@"NewTraitKey",@"")];
 		[cell setAccessoryType:UITableViewCellAccessoryDetailDisclosureButton];
 	} else {
@@ -211,7 +211,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [traitsTable deselectRowAtIndexPath:indexPath animated:NO];
 
-	if (indexPath.section == 6 && indexPath.row == [[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:6] uniqueId]){
+	if (indexPath.section == 6 && indexPath.row == [(Trait *)[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:6] uniqueId]){
 		TraitsNewViewController *viewController = [[TraitsNewViewController alloc] initWithNibName:@"TraitsNewViewController" bundle:[NSBundle mainBundle]];
 		[viewController setFace: face];
 		[self presentViewController:viewController animated:YES completion: NULL];

@@ -44,7 +44,7 @@
 }
 
 -(id) initWithUniqueID:(NSInteger) uid Name:(NSString *)n Image:(NSString *)img P0x:(float)p0x P0y:(float)p0y P1x:(float)p1x P1y:(float)p1y P2x:(float)p2x P2y:(float)p2y {
-    uniqueId = uid;
+    uniqueId = (int)uid;
     self.name = n;
     self.imageName = img;
     P0x = p0x;

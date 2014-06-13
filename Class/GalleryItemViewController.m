@@ -15,7 +15,7 @@
 @synthesize toolBar, actionView;
 @synthesize actionSheet;
 @synthesize index,firstTouch;
-@synthesize zoomImage, scrollView,hideTimer,isSweeping,imageArray;
+@synthesize zoomImage, scrollView, hideTimer, isSweeping, imageArray;
 @synthesize dragPoint, hidden;
 @synthesize leftButton, rightButton, renameButton;
 //@synthesize navIte
@@ -320,10 +320,10 @@
 }
 
 -(void)cancelUpload {
-	[activityView removeFromSuperview];
+	[_activityView removeFromSuperview];
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];   
-	[activityView release];
-	activityView = nil;
+	[_activityView release];
+	_activityView = nil;
 }
 
 -(void)uploadToFacebook {

@@ -13,7 +13,6 @@
 #import "FaceDetailsViewController.h"
 
 @interface PreLibraryViewController : UITableViewController <UIActionSheetDelegate >{
-	IBOutlet UITableView *traitTable;
 	FaceDetailsViewController *faceView;
 	LibraryViewController *libView;
 	FaceBlenderAppDelegate *appDelegate;
@@ -23,7 +22,6 @@
 	UIView *activityView;
 }
 
-@property ( retain) IBOutlet UITableView *traitTable;
 @property ( retain) LibraryViewController *libView;
 @property ( retain) FaceDetailsViewController *faceView;
 @property (retain) AddLibraryViewController *pickPointsView;

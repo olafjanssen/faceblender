@@ -135,7 +135,7 @@
 	int offset = 0;
 	for (int c=0;c<section;c++){
 		if (appDelegate.faceDatabaseDelegate.traitSections.count>c)
-			offset += (int)[[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
+			offset += (int)[(Trait *)[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
 	}
 	
 	Trait *trait = nil;
@@ -167,11 +167,11 @@
 
 -(Trait *)traitForIndexPath:(NSIndexPath *)indexPath {
 	// offset from section
-	int section = [self realSection:indexPath.section];
+	int section = (int)[self realSection:indexPath.section];
 	int offset = 0;
 	for (int c=0;c<section;c++){
 		if (appDelegate.faceDatabaseDelegate.traitSections.count>c)
-			offset += (int)[[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
+			offset += (int)[(Trait *)[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
 	}
 	
 	// find row belonging to non-empty trait
@@ -212,25 +212,25 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 	
 	if (isEmpty) {
-		[cell setText:NSLocalizedString(@"NoFacesFoundKey",@"")];
+		[cell.textLabel setText:NSLocalizedString(@"NoFacesFoundKey",@"")];
 		return cell;
 	}
 	
 	Trait *trait = [self traitForIndexPath:indexPath];
 	
-	int gcnt = [self facesPerTrait:trait];
+	int gcnt = (int)[self facesPerTrait:trait];
 	if (gcnt>0){
 			if ([[trait.description substringToIndex:1] compare:@"@"]==NSOrderedSame){
-				[cell setText:[NSString stringWithFormat:@"%@ (%d)", [trait.description substringFromIndex:1],gcnt]];
+				[cell.textLabel setText:[NSString stringWithFormat:@"%@ (%d)", [trait.description substringFromIndex:1],gcnt]];
 			} else		
-				[cell setText:[NSString stringWithFormat:@"%@ (%d)", NSLocalizedString(trait.description,@""), gcnt]];
+				[cell.textLabel setText:[NSString stringWithFormat:@"%@ (%d)", NSLocalizedString(trait.description,@""), gcnt]];
 		}
 			else
-		[cell setText: NSLocalizedString( trait.description, @"")];
+		[cell.textLabel setText: NSLocalizedString( trait.description, @"")];
 	
 	if ( [chosenUids containsIndex:trait.uniqueId]) [cell setAccessoryType:UITableViewCellAccessoryCheckmark];	
 	else [cell setAccessoryType:UITableViewCellAccessoryNone];
@@ -271,7 +271,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 		firstTime = NO;
 	}
 	
-	if (logicString.length > 1)
+	if (logicString.length > 1){
 	if (!curOperator) {
 		[logicString appendString: [NSString stringWithFormat:@" %@ ",NSLocalizedString(@"ORKey",@"")]];
 		[logicString2 appendString:[NSString stringWithFormat:@"\n%@\n",NSLocalizedString(@"ORKey",@"")]];
@@ -283,6 +283,7 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 		[logicString appendString:[NSString stringWithFormat:@"%@ ",NSLocalizedString(@"NOTKey",@"")]];
 		[logicString2 appendString:[NSString stringWithFormat:@"%@ ",NSLocalizedString(@"NOTKey",@"")]];
 	}
+    }
 	
 		if ([[curTrait.description substringToIndex:1] compare:@"@"]==NSOrderedSame){
 			[logicString appendString: [curTrait.description substringFromIndex:1]];
@@ -298,9 +299,12 @@ forRowAtIndexPath:(NSIndexPath *)indexPath {
 		if(appDelegate.faceDatabaseDelegate.faces.count>c)
 			face = [appDelegate.faceDatabaseDelegate.faces objectAtIndex:c];
 		if (!face) continue;
-		if (curTrait.description)
+		if (curTrait.description){
 			if ([face.traits rangeOfString:curTrait.description].location!=NSNotFound) togglesLocal[c] = YES; else togglesLocal[c] = NO;
-        if (notOperator) if (togglesLocal[c]) togglesLocal[c] = NO; else togglesLocal[c]= YES;
+        }
+        if (notOperator){
+         if (togglesLocal[c]) togglesLocal[c] = NO; else togglesLocal[c]= YES;   
+        }
 		
         if (curOperator){
             togglesOpen[c] = (togglesOpen[c] && togglesLocal[c]);

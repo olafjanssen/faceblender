@@ -224,7 +224,7 @@
 	[NSThread detachNewThreadSelector:@selector(showActivityViewer) toTarget:appDelegate withObject:nil];
 
 	// assigning control back to the main controller
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion: NULL];
 	faceId = -1;
 	[self.navigationController popViewControllerAnimated:YES];	
 }
@@ -277,7 +277,7 @@
 
 - (BOOL)peoplePickerNavigationController: (ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person {
     shouldCancel = NO;
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion: NULL];
 
 	// get image
 	CFDataRef dataRef = ABPersonCopyImageData(person);
@@ -291,7 +291,7 @@
 	}
 	
 	if (addImageView.image == nil){
-		[self dismissModalViewControllerAnimated:YES];
+		[self dismissViewControllerAnimated:YES completion: NULL];
 		faceId = -1;
 		[self.navigationController popViewControllerAnimated:YES];	
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"NoPhotoKey",@"")
@@ -405,7 +405,7 @@
 		picker.peoplePickerDelegate = self;
 		
 		// showing the picker
-		[self presentModalViewController:picker animated:YES];
+        [self presentViewController:picker animated:YES completion: NULL];
 		// releasing
 		[picker release];
 	
@@ -438,14 +438,16 @@
 	 NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:@"settings.ser"];
 	 NSMutableArray *settings = [NSArray arrayWithContentsOfFile:filePath];
 	 
-	if (settings.count>3)
-	 if ([[settings objectAtIndex:3] compare:@"YES"] == NSOrderedSame)
-	 imagePickerController.allowsImageEditing = YES;
-	 else
-	 imagePickerController.allowsImageEditing = NO;
+	if (settings.count>3){
+        if ([(NSString *)[settings objectAtIndex:3] compare:@"YES"] == NSOrderedSame) {
+	 imagePickerController.allowsEditing = YES;
+        } else {
+            imagePickerController.allowsEditing = NO;
+        }
+    }
 	 
 	 // force iPhones to the editing mode
-	 if ([[[UIDevice currentDevice] model] compare: @"iPod touch"] != NSOrderedSame) imagePickerController.allowsImageEditing = YES;
+	 if ([[[UIDevice currentDevice] model] compare: @"iPod touch"] != NSOrderedSame) imagePickerController.allowsEditing = YES;
 	 
 	 imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 	 [imagePickerController.view setHidden:NO];
@@ -479,7 +481,7 @@
 	face = nil;
     cameraPickerController.delegate = self;
 	// force iPhones to the editing mode
-	cameraPickerController.allowsImageEditing = YES;
+	cameraPickerController.allowsEditing = YES;
 	
     cameraPickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
 	[cameraPickerController.view setHidden:NO];
@@ -605,7 +607,7 @@
 	shouldCancel = NO;
 
     // Dismiss the image selection and close the program
-    [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissViewControllerAnimated:YES completion: NULL];
 	[picker.view setHidden:YES];
 
 	appDelegate.activityText = NSLocalizedString(@"CancelKey",@"");

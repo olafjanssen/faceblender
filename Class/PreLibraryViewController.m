@@ -10,7 +10,7 @@
 
 @implementation PreLibraryViewController
 
-@synthesize traitTable, libView, faceView, pickPointsView;
+@synthesize libView, faceView, pickPointsView;
 @synthesize rowsInSection,facesPerTrait,activityView;
 
 // Implement viewDidLoad to do additional setup after loading the view.
@@ -75,14 +75,6 @@
 	// check if the device is an iPod, otherwise the camera can also be used
 	UIDevice *curDevice = [UIDevice currentDevice];
 	if ([curDevice.model compare: @"iPod touch"] == NSOrderedSame){
-/*		if(self.faceView == nil){
-			FaceDetailsViewController *viewController = [[FaceDetailsViewController alloc] initWithNibName:@"FaceDetailsViewController" bundle:nil];
-			self.faceView = viewController;
-			[viewController release];
-		}
-		[self.navigationController pushViewController:self.faceView animated:NO];
-		[self.faceView pickImage];
-*/				
 		UIActionSheet *actionSheet = [[UIActionSheet alloc]
 									  initWithTitle:NSLocalizedString(@"AddFaceFromKey",@"")
 									  delegate:self 
@@ -104,37 +96,6 @@
 	[actionSheet release];
 	}
 }
-
-/*
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger) buttonIndex
-{	
-	if(self.faceView == nil){
-        FaceDetailsViewController *viewController = [[FaceDetailsViewController alloc] initWithNibName:@"FaceDetailsViewController" bundle:nil];
-        self.faceView = viewController;
-        [viewController release];
-    }
-	
-    switch (buttonIndex){
-        case 0:			
-			[self.navigationController pushViewController:self.faceView animated:NO];
-            [self.faceView pickImageFromAddressBook];
-            break;
-        case 1:
-			[self.navigationController pushViewController:self.faceView animated:NO];
-            [self.faceView pickImage];
-            break;
-        case 2:
-			if ([[UIDevice currentDevice].model compare: @"iPod touch"] != NSOrderedSame){
-				[self.navigationController pushViewController:self.faceView animated:NO];
-				[self.faceView pickImageFromCamera];
-			}
-            break;
-        default:
-            break;
-    }
-	
-}
-*/
 
 -(void)continuePick {
     // do nothing
@@ -197,13 +158,11 @@
 	}
 	
 	return cnt+1;
-//	return appDelegate.faceDatabaseDelegate.traitSections.count+1;
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section==0){
-		//if (appDelegate.faceDatabaseDelegate.faces.count>0) return 1; else return 3;
 		return 1;
 	}
     return [self rowsInSection:[self realSection:section]];
@@ -251,7 +210,7 @@
 	int offset = 0;
 	for (int c=0;c<section;c++){
 		if (appDelegate.faceDatabaseDelegate.traitSections.count>c)
-			offset += (int)[[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
+			offset += (int)[(Trait *)[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
 	}
 	
 	Trait *trait = nil;
@@ -282,11 +241,11 @@
 
 -(Trait *)traitForIndexPath:(NSIndexPath *)indexPath {
 	// offset from section
-	int section = [self realSection:indexPath.section];
+	int section = (int)[self realSection:indexPath.section];
 	int offset = 0;
 	for (int c=0;c<section;c++){
 		if (appDelegate.faceDatabaseDelegate.traitSections.count>c)
-			offset += (int)[[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
+			offset += (int)[(Trait *)[appDelegate.faceDatabaseDelegate.traitSections objectAtIndex:c] uniqueId];
 	}
 	
 	// find row belonging to non-empty trait
@@ -337,24 +296,17 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
 
 	NSAutoreleasePool *tmpPool = [[NSAutoreleasePool alloc] init];
 
 	if (indexPath.section == 0){
 		if (appDelegate.faceDatabaseDelegate.faces.count>0) {
-			[cell setText:[NSString stringWithFormat:@"%@ (%d)", NSLocalizedString(@"AllFacesKey",@""), appDelegate.faceDatabaseDelegate.faces.count]];
-/*		
-			UIButton *noButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-			[noButton setFrame:CGRectMake(250,12,35,44-2*12)];
-			[noButton setEnabled:NO];
-			[noButton setTitle:[NSString stringWithFormat:@"%d",appDelegate.faceDatabaseDelegate.faces.count] forState:UIControlStateNormal];
-			[cell addSubview:noButton];
- */
+			[cell.textLabel setText:[NSString stringWithFormat:@"%@ (%lu)", NSLocalizedString(@"AllFacesKey",@""), (unsigned long)appDelegate.faceDatabaseDelegate.faces.count]];
 		}
 		else {
-			[cell setText:NSLocalizedString(@"LibraryEmptyKey",@"")];
+			[cell.textLabel setText:NSLocalizedString(@"LibraryEmptyKey",@"")];
 			[cell setAccessoryType:UITableViewCellAccessoryNone];
 			[tmpPool release];
 			return cell;
@@ -363,27 +315,19 @@
 	} else {			
 		Trait *trait = [self traitForIndexPath:indexPath];
 		if (trait){
-		int gcnt = [self facesPerTrait:trait];
+		int gcnt = (int)[self facesPerTrait:trait];
 		if (gcnt>0) {
-			if (trait.description.length>0)
+			if (trait.description.length>0) {
 			if ([[trait.description substringToIndex:1] compare:@"@"]==NSOrderedSame){
-				[cell setText:[NSString stringWithFormat:@"%@ (%d)", [trait.description substringFromIndex:1], gcnt]];
-			} else		
-				[cell setText:[NSString stringWithFormat:@"%@ (%d)", NSLocalizedString(trait.description,@""), gcnt]];
+				[cell.textLabel setText:[NSString stringWithFormat:@"%@ (%d)", [trait.description substringFromIndex:1], gcnt]];
+			} else {
+				[cell.textLabel setText:[NSString stringWithFormat:@"%@ (%d)", NSLocalizedString(trait.description,@""), gcnt]];
+            }
+            }
 		}
-		else
-			[cell setText:NSLocalizedString(trait.description,@"")];
-/*
-		if (gcnt>0) {
-			UIButton *noButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-			[noButton setFrame:CGRectMake(250,12,35,44-2*12)];
-			[noButton setEnabled:NO];
-			[noButton setTitle:[NSString stringWithFormat:@"%d",gcnt] forState:UIControlStateNormal];
-			[noButton setBackgroundColor:[UIColor grayColor]];
-			[noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-			[cell addSubview:noButton];
-		}
-*/		
+		else {
+			[cell.textLabel setText:NSLocalizedString(trait.description,@"")];
+        }
 	}
 	}
 	

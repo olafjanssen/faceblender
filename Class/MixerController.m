@@ -10,7 +10,7 @@
 #import "math.h"
 
 @implementation MixerController
-@synthesize imageView,appDelegate,mode,toggles,newItem,progressView;
+@synthesize imageView,appDelegate,mode,toggles,theNewItem,progressView;
 @synthesize selectorView,traitLogicView, navBar, navItem, leftButton;
 @synthesize transformer, curFaceImg, mixData, curBitmapData, mixTimer;
 @synthesize transform, colorSpace, cgctx, mix_,mixMax_,mixCnt_,usedSelector,usedTraitLogic;
@@ -171,9 +171,9 @@
     }
     
     // prepare object
-    newItem = [[GalleryItem alloc] init];
-    [newItem setUniqueId: (arc4random() % 20000) + 1];
-    [newItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [newItem uniqueId]]];
+    theNewItem = [[GalleryItem alloc] init];
+    [theNewItem setUniqueId: (arc4random() % 20000) + 1];
+    [theNewItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [theNewItem uniqueId]]];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -184,16 +184,16 @@
     NSString* currentTime = [dateFormatter stringFromDate:[NSDate date]];
     [dateFormatter release];
     
-    [newItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
-    [newItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXFacesKey",@""), appDelegate.faceDatabaseDelegate.faces.count] ];
-    [newItem setDescription:NSLocalizedString(@"AllFacesKey",@"")];
+    [theNewItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
+    [theNewItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXFacesKey",@""), appDelegate.faceDatabaseDelegate.faces.count] ];
+    [theNewItem setDescription:NSLocalizedString(@"AllFacesKey",@"")];
 	
 	startDate = [[NSDate alloc] init];
 	if (showTips){
 		[self setRandomTip];
 	} else [tipView setHidden:YES];
 	
-    mixMax_ = appDelegate.faceDatabaseDelegate.faces.count;
+    mixMax_ = (int)appDelegate.faceDatabaseDelegate.faces.count;
 	if (workThread) [workThread release];	
 	workThread = [[NSThread alloc] initWithTarget:self selector:@selector(prepareMix) object:nil];
 	[workThread start];
@@ -246,9 +246,9 @@
 		leftButton.enabled = YES;
 		
 		// prepare object
-		newItem = [[GalleryItem alloc] init];
-		[newItem setUniqueId: (arc4random() % 20000) + 1];
-		[newItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [newItem uniqueId]]];
+		theNewItem = [[GalleryItem alloc] init];
+		[theNewItem setUniqueId: (arc4random() % 20000) + 1];
+		[theNewItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [theNewItem uniqueId]]];
 		
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -259,9 +259,9 @@
 		NSString* currentTime = [dateFormatter stringFromDate:[NSDate date]];
 		[dateFormatter release];
 		
-		[newItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
-		[newItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXSelectionKey",@""), total] ];
-		[newItem setDescription:nameslist];
+		[theNewItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
+		[theNewItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXSelectionKey",@""), total] ];
+		[theNewItem setDescription:nameslist];
 		
 		startDate = [[NSDate alloc] init];
 		if (showTips){
@@ -293,9 +293,9 @@
 		
 		
 		// prepare object
-		newItem = [[GalleryItem alloc] init];
-		[newItem setUniqueId: (arc4random() % 20000) + 1];
-		[newItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [newItem uniqueId]]];
+		theNewItem = [[GalleryItem alloc] init];
+		[theNewItem setUniqueId: (arc4random() % 20000) + 1];
+		[theNewItem setImageName: [NSString stringWithFormat:@"gallery_%d.png", [theNewItem uniqueId]]];
 		
 		NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setDateStyle:NSDateFormatterMediumStyle];
@@ -306,9 +306,9 @@
 		NSString* currentTime = [dateFormatter stringFromDate:[NSDate date]];
 		[dateFormatter release];
 		
-		[newItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
-		[newItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXTraitKey",@""), total] ];
-		[newItem setDescription:nameslist];
+		[theNewItem setTitle:[NSString stringWithFormat:@"%@ (%@)", currentDate, currentTime] ];
+		[theNewItem setMethod:[NSString stringWithFormat:NSLocalizedString(@"BlendingXTraitKey",@""), total] ];
+		[theNewItem setDescription:nameslist];
 		
 		startDate = [[NSDate alloc] init];
 		if (showTips){
@@ -351,7 +351,7 @@
 }
 
 -(void)dismiss {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion: NULL];
 }
 
 -(IBAction)CANCELbutton {
@@ -360,7 +360,7 @@
 	}
 	while ([workThread isExecuting]) {
 	};
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion: NULL];
 }
 
 -(void)removeTipView {
@@ -437,9 +437,9 @@
     CGPoint c1= CGPointMake(b1.x/reswidth,b1.y/resheight);
 	CGPoint c2 = CGPointMake(b2.x/reswidth,b2.y/resheight);
 	
-	[newItem setPoint:c0 at:0];
-	[newItem setPoint:c1 at:1];
-	[newItem setPoint:c2 at:2];
+	[theNewItem setPoint:c0 at:0];
+	[theNewItem setPoint:c1 at:1];
+	[theNewItem setPoint:c2 at:2];
 	
     [transformer setDestPointsP0x: b0.x P0y: b0.y P1x: b1.x P1y: b1.y P2x: b2.x P2y: b2.y];
 	
@@ -471,17 +471,8 @@
 }
 
 -(void)doMix {
-	uint64_t        start1;
-    uint64_t        end1;
 	uint64_t        start2;
-    uint64_t        end2;
-	uint64_t        start3;
-    uint64_t        end3;
-	uint64_t        start4;
-    uint64_t        end4;
-	uint64_t        start5;
-    uint64_t        end5;
-	
+    uint64_t        end2;	
 	
     mix_++;
     if(toggles[mix_]==NO) return;
@@ -738,21 +729,21 @@ message:@"" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
     [imageView setImage:result];
     //save result to disk
     NSData *pngimage = UIImagePNGRepresentation(result);
-	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:newItem.imageName];
+	NSString *filePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0] stringByAppendingPathComponent:theNewItem.imageName];
 	
     [pngimage writeToFile:filePath atomically:YES];
 	
 	CGImageRelease(imgRef);	
 	
-	[IconMaker makeIconItem:newItem];
+	[IconMaker makeIconItem:theNewItem];
 	
-	[appDelegate.galleryDatabaseDelegate saveImage:newItem];
+	[appDelegate.galleryDatabaseDelegate saveImage:theNewItem];
 }
 
 
 -(void) finishUp{
 	// free data
-	[newItem release]; newItem = nil;
+	[theNewItem release]; theNewItem = nil;
 	CGColorSpaceRelease(colorSpace);
 	free(toggles); toggles = nil;
 	free(mixData); mixData  = nil;
@@ -828,7 +819,7 @@ message:@"" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
  
  // if no faces then treat as cancel
  if (icnt == 0){
- [self dismissModalViewControllerAnimated:YES];
+ [self dismissViewControllerAnimated:YES completion: NULL];
  return;
  }
  
@@ -1069,7 +1060,7 @@ message:@"" delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil];
 	if (toggles){ free(toggles); toggles = nil; }
 	appDelegate = nil;
 	if (progressView) [progressView release]; progressView = nil;
-	if (newItem) [newItem release]; newItem = nil;
+	if (theNewItem) [theNewItem release]; theNewItem = nil;
 	if (selectorView) [selectorView release]; selectorView = nil;
 	if (traitLogicView) [traitLogicView release]; traitLogicView = nil;
 	if (navBar) [navBar release]; navBar = nil;

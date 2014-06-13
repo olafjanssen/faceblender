@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082A2F611947B33B00332639 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 082A2F601947B33B00332639 /* libz.1.2.5.dylib */; };
 		086F39771947A1840068C275 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 086F39761947A1840068C275 /* Default-568h@2x.png */; };
 		08CEFAD70ED499AF00B92916 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CEFAD60ED499AE00B92916 /* libsqlite3.0.dylib */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -106,10 +107,10 @@
 		6AFA68ED0FCECD0800C533AB /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA68E10FCECD0800C533AB /* unzip.c */; };
 		6AFA68EE0FCECD0800C533AB /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA68E20FCECD0800C533AB /* ioapi.c */; };
 		6AFA68F10FCECD0800C533AB /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 6AFA68E60FCECD0800C533AB /* zip.c */; };
-		6AFA693B0FCED1A300C533AB /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AFA693A0FCED1A300C533AB /* libz.1.2.3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		082A2F601947B33B00332639 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		086F39761947A1840068C275 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		08CEFAD60ED499AE00B92916 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -269,6 +270,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				082A2F611947B33B00332639 /* libz.1.2.5.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765080DF74369002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -276,7 +278,6 @@
 				6A60F38D0F9B2369005DE80E /* AddressBook.framework in Frameworks */,
 				6A60F38F0F9B2369005DE80E /* AddressBookUI.framework in Frameworks */,
 				6ACAC1810FCD920E003C6FA9 /* SystemConfiguration.framework in Frameworks */,
-				6AFA693B0FCED1A300C533AB /* libz.1.2.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +330,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				082A2F601947B33B00332639 /* libz.1.2.5.dylib */,
 				6AFA693A0FCED1A300C533AB /* libz.1.2.3.dylib */,
 				6A60F38C0F9B2369005DE80E /* AddressBook.framework */,
 				6A60F38E0F9B2369005DE80E /* AddressBookUI.framework */,
